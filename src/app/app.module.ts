@@ -1,20 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from  '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { PanelModule } from 'primeng/panel';
-
 import { AppComponent } from './app.component';
-import { AgreementViewComponent } from './agreement-view/agreement-view.component';
+import { AgreementViewModule } from './agreement-view/agreement-view.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    AgreementViewComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    PanelModule
+    AgreementViewModule,
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
