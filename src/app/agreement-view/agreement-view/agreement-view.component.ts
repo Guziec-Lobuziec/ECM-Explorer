@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AgreementDescription } from '../../share/model/agreement-description';
+import { AgreementDescription } from 'src/share/model/agreement-description';
 
 @Component({
   selector: 'app-agreement-view',

@@ -4,12 +4,12 @@ import { NgModule } from '@angular/core';
 import { PanelModule } from 'primeng/panel';
 import { TableModule} from 'primeng/table';
 import { AppComponent } from './app.component';
-import { AgreementViewComponent } from './agreement-view/agreement-view.component';
+import { AgreementViewModule } from './agreement-view/agreement-view.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AgreementViewComponent
+    AgreementViewModule
   ],
   imports: [
     BrowserModule,
