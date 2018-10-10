@@ -1,8 +1,14 @@
 :host >>> .ui-carousel {
     margin: 10px;   
     text-align: center;
+    display: block;
 }
 
+:host >>> .ui-panel	
+{
+    display:block;
+    margin-left: 175px;
+}
 :host >>> .ui-carousel-header
 {
     font-family: 'Enriqueta', arial, serif; 

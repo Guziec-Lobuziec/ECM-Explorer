@@ -1,0 +1,15 @@
+.sidebar
+{
+    width: 175px;
+    position: fixed;
+    z-index: 1;
+    background-color: white;
+    top: 8px;
+    left: 4px;
+    
+}
+
+:host >>> .ui-panelmenu
+{
+    height: 100vh;
+}

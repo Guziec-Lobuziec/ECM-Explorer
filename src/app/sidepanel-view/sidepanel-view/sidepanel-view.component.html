@@ -1,8 +1,4 @@
-<p-panel>
-  <ul routerLinkActive="active">
-    <li class="nav-item"><a class="nav-link" routerLink="/search">Search</a></li>
-    <li class="nav-item"><a class="nav-link" routerLink="/overview">Overview</a></li>
-    <li class="nav-item"><a class="nav-link" routerLink="/creator">Creator</a></li>
-  </ul>
-</p-panel>
+<div class="sidebar">
+  <p-menu [model]="items"></p-menu>
+</div>
 <router-outlet></router-outlet>
