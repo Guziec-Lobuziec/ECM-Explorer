@@ -16,6 +16,6 @@ const routes: Routes = [
 
 @NgModule({
     exports: [RouterModule],
-    imports: [RouterModule.forChild(routes)]
+    imports: [RouterModule.forRoot(routes)]
 })
 export class SidePanelRoutingModule {}
