@@ -24,6 +24,7 @@
     "@angular/router": "^6.1.9",
     "core-js": "^2.5.4",
     "hoek": "^5.0.4",
+    "npm": "^6.4.1",
     "primeicons": "^1.0.0-beta.10",
     "primeng": "^6.1.4",
     "rxjs": "^6.3.3",

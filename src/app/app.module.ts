@@ -1,18 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
+import { SidepanelViewModule } from './sidepanel-view/sidepanel-view.module';
 import { AgreementViewModule } from './agreement-view/agreement-view.module';
 import { UserOverviewModule} from './user-overview/user-overview.module';
-import {CarouselModule} from 'primeng/carousel';
+import { BrowserAnimationsModule } from  '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    SidepanelViewModule,
     AgreementViewModule,
     UserOverviewModule,
-    CarouselModule,
+    BrowserAnimationsModule,
     BrowserModule
   ],
   providers: [],
