@@ -1,7 +1,6 @@
 import {NgModule} from "@angular/core";
 import {RouterModule, Routes} from "@angular/router";
 
-import {SidepanelViewComponent} from "./sidepanel-view/sidepanel-view.component" ;
 
 const routes: Routes = [
   {path: "search", loadChildren: ''},
@@ -9,7 +8,7 @@ const routes: Routes = [
   {path: "creator", loadChildren: ''},
   {
     path: '',
-    redirectTo: '',
+    redirectTo: '/search',
     pathMatch: 'full'
   }
 ];

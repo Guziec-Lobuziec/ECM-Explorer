@@ -4,6 +4,7 @@ import { PanelModule } from 'primeng/panel';
 import { SidepanelViewComponent } from './sidepanel-view/sidepanel-view.component';
 import { SidePanelRoutingModule } from './sidepanel-routing.module';
 
+
 @NgModule({
   imports: [
     CommonModule,
