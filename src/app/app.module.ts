@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { SidepanelViewModule } from './sidepanel-view/sidepanel-view.module';
 import { AgreementViewModule } from './agreement-view/agreement-view.module';
 import { UserOverviewModule} from './user-overview/user-overview.module';
+import { BrowserAnimationsModule } from  '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { UserOverviewModule} from './user-overview/user-overview.module';
     SidepanelViewModule,
     AgreementViewModule,
     UserOverviewModule,
+    BrowserAnimationsModule,
     BrowserModule
   ],
   providers: [],

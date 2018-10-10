@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AgreementDescription } from 'src/share/model/agreement-description';
+import { AgreementDescription } from 'src/app/share/model/agreement-description';
 
 @Component({
   selector: 'app-agreement-view',
@@ -7,7 +7,7 @@ import { AgreementDescription } from 'src/share/model/agreement-description';
   styleUrls: ['./agreement-view.component.css']
 })
 export class AgreementViewComponent implements OnInit {
-  
+
   agreementDescription: AgreementDescription = {
     creationTime: new Date(2018, 10, 19),
     expirationTime: new Date(2018,10,20),
@@ -21,7 +21,7 @@ export class AgreementViewComponent implements OnInit {
       {address: "xzxcvzxcvddd", role: "luadsfl"},
       {address: "aaa", role: "ee"}
     ],
-    listOfAction: [ 
+    listOfAction: [
       {canonicName: "action1"},
       {canonicName: "action2"},
       {canonicName: "action3"}
@@ -31,14 +31,14 @@ export class AgreementViewComponent implements OnInit {
       {canonicName: "paction2"},
       {canonicName: "paction3"}
     ],
-    listOfNotifications:[]    
+    listOfNotifications:[]
     };
-    
+
 
 
   constructor() { }
-  
-  
+
+
 
   ngOnInit(): void {
     throw new Error("Method not implemented.");
