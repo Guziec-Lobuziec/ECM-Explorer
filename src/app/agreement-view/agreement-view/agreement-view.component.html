@@ -1,0 +1,34 @@
+<p-panel header="{{agreementDescription.name}}">
+    <div class="ui-g">
+        <div class="ui-g-4">
+            <p>Creation time: {{agreementDescription.creationTime}}  </p>
+            <p>Expiration time: {{agreementDescription.expirationTime}} </p>
+            <p>Status: {{agreementDescription.status}}</p>
+            <p>Price: {{ agreementDescription.price}} </p>
+            <p>Descritpion: {{agreementDescription.description}} </p>
+        </div>
+        <div class="ui-g-4">
+            <p-table [columns]="" [value]="agreementDescription.listOfParticipant" [scrollable]="true">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Address</th>
+                        <th>Roles</th>
+                    </tr>
+                </ng-template>
+
+                <ng-template pTemplate="body" let-participant>
+                    <tr>
+                        <th>{{participant.address}}</th>
+                        <th>{{participant.role}}</th>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+        <div class="ui-g-4">
+            <p-panel header="Notification">
+
+            </p-panel>
+        </div>
+    </div>
+
+</p-panel>
