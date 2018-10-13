@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { UserOverviewComponent } from './user-overview/user-overview.component';
 import { PanelModule } from 'primeng/panel';
 import { ButtonModule } from 'primeng/button';
-import {CarouselModule} from 'primeng/carousel';
+import { CarouselModule } from 'primeng/carousel';
+import { UserOverviewRoutingModule } from './user-overview-routing.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import {CarouselModule} from 'primeng/carousel';
     CommonModule,
     ButtonModule,
     PanelModule,
-    CarouselModule
+    CarouselModule,
+    UserOverviewRoutingModule
   ],
   exports: [UserOverviewComponent],
   declarations: [UserOverviewComponent]

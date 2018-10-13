@@ -14,9 +14,9 @@ export class SidepanelViewComponent implements OnInit {
 
   ngOnInit() {
     this.items = [
-      { label: 'New',    icon: 'pi pi-fw pi-plus' },
-      { label: 'Open',   icon: 'pi pi-fw pi-external-link' },
-      { label: 'Search', icon: 'pi pi-pi pi-search'}
+      { label: 'Search',    icon: 'pi pi-pi pi-search' ,routerLink: ['/search'] },
+      { label: 'Overview',   icon: 'pi pi-fw pi-external-link' , routerLink: ['/overview'] },
+      { label: 'Creator', icon: 'pi pi-pw pi-file', routerLink: ['/creator']}
     ]
     }
 }
