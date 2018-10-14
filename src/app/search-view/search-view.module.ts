@@ -11,6 +11,7 @@ import { SearchViewRoutingModule } from './search-view-routing.module';
     FormsModule,
     SearchViewRoutingModule    
   ],
+  exports: [SearchViewComponent],
   declarations: [SearchViewComponent, FilterPipe]
 })
 export class SearchViewModule { }
