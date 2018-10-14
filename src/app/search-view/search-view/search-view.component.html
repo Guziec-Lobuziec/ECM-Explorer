@@ -2,8 +2,8 @@
     <input [(ngModel)]="searchText" placeholder="search text goes here">
   <hr/>
     <ul>
-      <li *ngFor="let c of characters">
-        {{c}}
+      <li *ngFor="let c of contracts | filter : searchText">
+        <span>{{c.name}}</span>
       </li>
     </ul>
 </div>

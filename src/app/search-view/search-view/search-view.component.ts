@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { UserOverviewComponent } from 'src/app/user-overview/user-overview/user-overview.component';
+//import { AgreementDescription } from 'src/app/share/model/agreement-description';
 
 
 @Component({
@@ -9,17 +11,10 @@ import { FormControl } from '@angular/forms';
 })
 export class SearchViewComponent implements OnInit {
 
-  name = 'SearchView';
+  name = 'search';
 
-  contracts = [
-    'halloween costumes for sale',
-    'peanuts shop',
-    'big contract',
-    'greenland snow contract',
-    'discount swords for sale',
-    'wizardry shop'
-  ]
-  
+  contracts = UserOverviewComponent;
+
   constructor() { }
 
   ngOnInit() {

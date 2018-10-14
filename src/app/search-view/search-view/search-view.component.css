@@ -1,0 +1,11 @@
+.search
+{
+    width: 300px;
+    position: fixed;
+    margin-left: 200px;
+    z-index: 1;
+    background-color: white;
+    top: 8px;
+    left: 4px;
+    
+}
