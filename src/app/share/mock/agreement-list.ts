@@ -1,12 +1,12 @@
 import { AgreementDescription } from 'src/app/share/model/agreement-description';
 
-agreementsList: AgreementDescription[] =
+export const agreementsList: AgreementDescription[] =
   [{
     creationTime: new Date(2018, 10, 19),
     expirationTime: new Date(2018,10,20),
     status: 0,
     price: 8735,
-    name: "Kapcie",
+    name: "Contract for Halloween",
     description: "The best supreme kapcie",
     listOfParticipant: [],
     listOfAction: [],
@@ -18,7 +18,7 @@ agreementsList: AgreementDescription[] =
       expirationTime: new Date(2018,10,20),
       status: 0,
       price: 8735,
-      name: "Kapcie",
+      name: "Discount wizardry SHOP",
       description: "The best supreme kapcie",
       listOfParticipant: [],
       listOfAction: [],
@@ -30,7 +30,7 @@ agreementsList: AgreementDescription[] =
         expirationTime: new Date(2018,10,20),
         status: 0,
         price: 8735,
-        name: "Kapcie",
+        name: "New peanut conctract shop",
         description: "The best supreme kapcie",
         listOfParticipant: [],
         listOfAction: [],
@@ -42,7 +42,7 @@ agreementsList: AgreementDescription[] =
           expirationTime: new Date(2018,10,20),
           status: 0,
           price: 8735,
-          name: "Kapcie",
+          name: "Kapcie4",
           description: "The best supreme kapcie",
           listOfParticipant: [],
           listOfAction: [],
