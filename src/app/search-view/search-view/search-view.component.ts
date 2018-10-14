@@ -10,8 +10,8 @@ import { agreementsList } from 'src/app/share/mock/agreement-list';
 })
 export class SearchViewComponent implements OnInit {
 
-  //name = 'search';
-  contracts = agreementsList;
+  public searchText: String;
+  public contracts = agreementsList;
 
   constructor() { }
 

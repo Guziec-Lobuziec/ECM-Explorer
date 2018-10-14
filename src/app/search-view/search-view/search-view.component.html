@@ -1,9 +1,16 @@
 <div class="search">
     <input [(ngModel)]="searchText" placeholder="search text goes here">
   <hr/>
-    <ul>
-      <li *ngFor="let c of contracts | filter : searchText">
-        {{c.name}}
-      </li>
-    </ul>
+      <table id="searchResults">
+        <tr>
+          <th id="indexGGth">#</th>
+          <th>Name</th>
+        </tr>
+      </table>
+      <table id="searchResults" *ngFor="let c of contracts | filter: {name: searchText}, let i = index;"> <!-- , description: searchText}; dla innych filtrow -->
+        <tr>
+          <td id="indexGG">{{i+1}}</td>
+          <td>{{c.name}}</td>
+        </tr>
+      </table>
 </div>
