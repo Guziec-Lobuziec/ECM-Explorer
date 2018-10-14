@@ -9,17 +9,20 @@ import { FormControl } from '@angular/forms';
 })
 export class SearchViewComponent implements OnInit {
 
-  searchField: FormControl; 
-  searches: string[] = []; 
+  name = 'SearchView';
+
+  contracts = [
+    'halloween costumes for sale',
+    'peanuts shop',
+    'big contract',
+    'greenland snow contract',
+    'discount swords for sale',
+    'wizardry shop'
+  ]
   
   constructor() { }
 
   ngOnInit() {
-    this.searchField = new FormControl();
-    this.searchField.valueChanges
-        .subscribe(term => {
-          this.searches.push(term);
-        });
   }
 
 }

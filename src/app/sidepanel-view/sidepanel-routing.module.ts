@@ -8,7 +8,7 @@ const routes: Routes = [
     redirectTo: '/overview',
     pathMatch: 'full'
   },
-  //{path: "search", loadChildren: ''},
+  {path: "search", loadChildren: '../search-view/search-view.module#SearchViewModule'},
   {path: "overview", loadChildren: '../user-overview/user-overview.module#UserOverviewModule'},
   //{path: "creator", loadChildren: ''},
 ];
