@@ -1,0 +1,78 @@
+<div class="agreement-creator">
+  <div id="center-card" class="p-grid">
+    <div id="p-card-div" class="p-xl-8 p-lg-9 p-col-12">
+      <p-card>
+        <div class="p-grid">
+          <div class="margin-fix p-col-12">
+            <h2 id="title">Create Agreement</h2>
+          </div>
+          <div class="margin-fix p-md-5 p-col-12 p-grid">
+            <div id="p-dropdown-div" class="p-col-12">
+              <p-dropdown id="p-dropdown" [options]="agreements" [(ngModel)]="selectedAgreement" placeholder="Select an agreement" [autoWidth]="false" optionLabel="name" [showClear]="true"></p-dropdown>
+            </div>
+            <!-- medium and high resolution-->
+            <div id="p-scrollPanel-div" class="p-col-12">
+              <p-scrollPanel id="p-scrollPanel" [style]="{width: '92%', height: '225px'}">
+                <div class="agreement-description">{{selectedAgreement ? selectedAgreement.description : ''}}</div>
+              </p-scrollPanel>
+            </div>
+            <!-- low resolution -->
+            <div id="p-scrollPanel-div-low" class="w3-animate-fading">
+              <p-scrollPanel id="p-scrollPanel" [style]="{width: '92%', height: '315px'}">
+                <div class="agreement-description">{{selectedAgreement ? selectedAgreement.description : ''}}</div>
+              </p-scrollPanel>
+            </div>
+            <!-- end of low resolution -->
+            <!-- very low resolution-->
+            <div *ngIf="selectedAgreement" id="p-scrollPanel-div-very-low" class="w3-animate-fading">
+              <p-scrollPanel id="p-scrollPanel" [style]="{width: '92%', height: '100px'}">
+                <div class="agreement-description">{{selectedAgreement ? selectedAgreement.description : ''}}</div>
+              </p-scrollPanel>
+            </div>
+            <!-- end of very low resolution-->
+          </div>
+          <div id="inputs-div" class="p-md-7 p-col-12 p-grid">
+            <div id="name-input-div" class="p-lg-6 p-col-12">
+              <span class="ui-float-label">
+                <input id="float-input" type="text" pInputText> 
+                <label id="nameLabel" for="float-input">Name</label>
+              </span>
+            </div>
+            <div id="price-input-div" class="p-lg-6 p-col-12">
+              <span class="ui-float-label">
+                <input id="float-input" type="text" pInputText pKeyFilter="num"> 
+                <label id="priceLabel" for="float-input">Price</label>
+              </span>
+            </div>
+            <div id="p-calendar-date-div" class="p-lg-6 p-col-12">
+              <span class="ui-float-label">
+                <p-calendar id="p-calendar-date" [(ngModel)]="rangeDates" selectionMode="range" [style]="{'width':'100%'}" [inputStyle]="{'width':'90%'}" [readonlyInput]="true"></p-calendar>
+                <label id="p-calendar-label" for="p-calendar-date">Date Range</label>
+              </span>
+            </div>
+            <div id="p-calendar-time-div" class="p-lg-6 p-col-12">
+              <span class="ui-float-label">
+                <p-calendar id="p-calendar-time" [(ngModel)]="date8" [style]="{'width':'100%'}" [inputStyle]="{'width':'90%'}" [timeOnly]="true"></p-calendar>
+                <label id="p-calendar-label" for="p-calendar-time">End Time</label>
+              </span>
+            </div>
+            <div id="text-area-div" class="p-col-12">
+              <span class="ui-float-label">
+                <textarea id="text-area" rows="5" type="text" pInputTextarea></textarea>
+                <label for="text-area" id="description-label">Description</label>
+              </span>
+            </div>
+          </div>
+          <div id="buttons-div" class="p-col-12 p-grid">
+            <div id="cancel-button-div" class="p-md-5 p-col-6">
+              <button id="cancel-button" pButton type="button" label="Back" icon="pi pi-times" class="ui-button-secondary"></button>
+            </div>
+            <div id="submit-button-div" class="p-md-7 p-col-6">
+              <button id="submit-button" pButton type="button" label="Submit" icon="pi pi-check"></button>
+            </div>
+          </div>
+        </div>
+      </p-card>
+    </div>  
+  </div>
+</div>
