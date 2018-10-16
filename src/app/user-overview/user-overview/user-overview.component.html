@@ -1,0 +1,58 @@
+<p-panel header="User Home">
+ <p>Address: '0xfB6916095ca1df60bB79Ce92cE3Ea74c37c5d359'</p>
+ <p-carousel headerText="Participation in Agreements" [value]="agreementsList" class="ui-carousel">
+        <ng-template let-agreement pTemplate="item">
+                <div class="ui-grid ui-grid-responsive">
+                    <div class="ui-grid-row">
+                        <div class="ui-grid-col-12"><img src="" width="60"></div>
+                    </div>
+                    <div class="ui-grid-row">
+                        <div class="ui-grid-col-6">Creation Time</div>
+                        <div class="ui-grid-col-6">{{agreement.creationTime}}</div>
+                    </div>
+                    <div class="ui-grid-row">
+                        <div class="ui-grid-col-6">Price</div>
+                        <div class="ui-grid-col-6">{{agreement.price}}</div>
+                    </div>
+                    <div class="ui-grid-row">
+                        <div class="ui-grid-col-6">Name</div>
+                        <div class="ui-grid-col-6">{{agreement.name}}</div>
+                    </div>
+                    <div class="ui-grid-row">
+                        <div class="ui-grid-col-12">
+                            <button type="button" pButton icon="pi pi-search" (click)="selectCar(car)"></button>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+ </p-carousel>
+
+ <p-carousel headerText="My Agreements" [value]="agreementsList">
+        <ng-template let-agreement pTemplate="item">
+                <div class="ui-grid ui-grid-responsive">
+                    <div class="ui-grid-row">
+                        <div class="ui-grid-col-12"><img src="" width="60"></div>
+                    </div>
+                    <div class="ui-grid-row">
+                        <div class="ui-grid-col-6">Creation Time</div>
+                        <div class="ui-grid-col-6">{{agreement.creationTime}}</div>
+                    </div>
+                    <div class="ui-grid-row">
+                        <div class="ui-grid-col-6">Price</div>
+                        <div class="ui-grid-col-6">{{agreement.price}}</div>
+                    </div>
+                    <div class="ui-grid-row">
+                        <div class="ui-grid-col-6">Name</div>
+                        <div class="ui-grid-col-6">{{agreement.name}}</div>
+                    </div>
+                    <div class="ui-grid-row">
+                        <div class="ui-grid-col-12">
+                            <button type="button" pButton icon="pi pi-search"></button>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+ </p-carousel>
+
+ <button pButton type="button" label="Unlock Wallet" class="ui-button-secondary"></button>
+</p-panel>
