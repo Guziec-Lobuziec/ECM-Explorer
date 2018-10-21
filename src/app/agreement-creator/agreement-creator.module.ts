@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AgreementCreatorComponent } from './agreement-creator/agreement-creator.component';
-import { FormsModule} from '@angular/forms';
-import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AgreementCreatorRoutingModule } from './agreement-creator-routing.module';
 
 //PrimeNG
@@ -21,8 +19,6 @@ import { FieldsetModule } from 'primeng/fieldset';
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
-    BrowserAnimationsModule,
     AgreementCreatorRoutingModule,
     //PrimeNG
     ListboxModule,
