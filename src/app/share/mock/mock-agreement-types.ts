@@ -1,4 +1,10 @@
-import { AgreementType } from 'src/share/model/agreement-type';
+class AgreementType {
+    constructor(
+      public type:string,
+      public name:string,
+      public description:string
+    ){}
+}
 
 export const MockAgreementTypes: AgreementType[] = [
     { type: "A 1.1", name: 'A 1.1',description: 'The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter\'s wedding. His beloved' +

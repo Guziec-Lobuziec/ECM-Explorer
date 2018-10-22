@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AgreementCreatorComponent } from './agreement-creator/agreement-creator.component';
 import { AgreementCreatorRoutingModule } from './agreement-creator-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 //PrimeNG
 import { ListboxModule} from 'primeng/listbox';
@@ -20,6 +21,7 @@ import { FieldsetModule } from 'primeng/fieldset';
   imports: [
     CommonModule,
     AgreementCreatorRoutingModule,
+    ReactiveFormsModule,
     //PrimeNG
     ListboxModule,
     ScrollPanelModule,

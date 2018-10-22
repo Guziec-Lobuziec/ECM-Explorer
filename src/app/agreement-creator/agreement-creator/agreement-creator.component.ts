@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MockAgreementTypes } from 'src/share/mock/mock-agreement-types';
+import { MockAgreementTypes } from 'src/app/share/mock/mock-agreement-types';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
 //PrimeNG
@@ -12,29 +12,31 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 
 export class AgreementCreatorComponent implements OnInit {
 
-  agreements = MockAgreementTypes;
+  agreementTypes = MockAgreementTypes;
 
-  form: FormGroup;
+  agreementForm: FormGroup;
 
-  constructor(fb: FormBuilder) {
-    this.form = fb.group({
-      "name": new FormControl("name", Validators.required),
-      "price": new FormControl("price", Validators.required),
-      //"dateRange": new FormControl("dateRange", Validators.required),
-      //"expirationTime": new FormControl("expirationTime", Validators.required),
-      "description": new FormControl("description", Validators.required)
-    })
+  constructor(private fb: FormBuilder) {
   }
 
   onSubmitModelBased() {
     console.log("model-based form submitted");
-    console.log(this.form);
+    console.log(this.agreementForm);
   }
 
-    ngOnInit() {}
+  ngOnInit() {
+    this.agreementForm = this.fb.group({
+      "name": ["name", Validators.required],
+      "price": ["price", Validators.required],
+      "agreementSelectedType": ["type", Validators.required],
+      "dateRange": [,Validators.required],
+      "expirationTime": [,Validators.required],
+      "description": ["description", Validators.required]
+    })
+  }
 
 
-    
+
 
 
 
