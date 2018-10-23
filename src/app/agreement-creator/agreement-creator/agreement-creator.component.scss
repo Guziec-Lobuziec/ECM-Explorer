@@ -1,0 +1,316 @@
+$break-sm: 576px;
+$break-md: 768px;
+$break-lg: 992px;
+$break-xl: 1200px;
+
+:host ::ng-deep .ui-card {
+    max-width: 800px;
+}
+
+:host ::ng-deep .ui-card-title {
+    margin-bottom: 16px;
+}
+
+#center-card {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#p-card-div {
+    display: flex;
+    justify-content: center;
+}
+
+
+.ui-card-body {
+    padding: 32px;
+}
+
+:host ::ng-deep p-card > .ui-corner-all {
+    border-radius: 6px
+}
+
+#float-input, :host ::ng-deep .ui-dropdown, 
+:host ::ng-deep p-calendar > span > .ui-inputtext {
+    border: none;
+    border-bottom: solid;
+    border-width: 1px;
+    border-radius: 0px;
+    border-color: rgb(230, 230, 230);
+    width: 90%;
+}
+
+#p-dropdown-div > *, #p-scrollPanel-div > * {
+    margin-right: 2.5%
+}
+
+.margin-fix {
+    margin-left: 2.25%;
+}
+
+:host ::ng-deep .ui-dropdown-item > .ui-state-highlight > span {
+    color: rgb(255,255,255);
+}
+
+
+:host ::ng-deep #p-calendar-date:focus-within ~#p-calendar-label,
+:host ::ng-deep #p-calendar-time:focus-within ~#p-calendar-label {
+    color: rgb(0, 122, 217);
+}
+
+.agreement-description {
+    text-align: justify;
+}
+
+#float-input:focus {
+    border-color: rgb(0, 122, 217);
+}
+
+#float-input:hover {
+    border-color: rgb(35,35,35);
+}
+
+#p-calendar-date-div, #p-calendar-time-div {
+    margin-top: 16px;
+}
+
+
+#text-area {
+    border-color: rgb(230, 230, 230);
+    border-radius: 0px;
+    resize: none;
+}
+
+#text-area:hover {
+    border-color: rgb(35,35,35);
+}
+
+#text-area:focus {
+    border-color: rgb(0, 122, 217);
+}
+
+.ui-card {
+    border-radius: 10px; 
+}
+
+#p-header {
+    text-align: center;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
+//            $break-md - 1             //               less than 576            //
+////////////////////////////////////////////////////////////////////////////////////
+
+@media screen and (max-width: $break-md - 1) {
+
+    #title {
+        text-align: center;
+    }
+
+    #p-scrollPanel-div {
+        display: none;
+    }
+
+    #p-scrollPanel-div {
+        display: none;
+    }
+
+    #p-scrollPanel-div-low {
+        display: none;
+    }
+
+    #p-scrollPanel-div-very-low {
+        display: inline;
+        margin-left: 1.25%;
+    }
+
+    #inputs-div {
+        margin-left: 2.25%;
+        margin-top: 8px;
+    }
+
+    #price-input-div {
+        margin-top: 16px;
+    }
+
+    #text-area {
+        width: 90%;
+    }
+
+    .ui-state-default ~#description-label {
+        top: -0.6em;
+        margin-top: 12px;
+        margin-left: 0.15em;
+    }
+    
+    .ui-state-default:focus ~#description-label {
+        top: -2.25em;
+        margin-left: 0em;
+    }
+    
+    .ui-state-filled ~#description-label {
+        top: -2.25em;
+        margin-left: 0em;
+    }
+    
+    .ui-state-filled:focus ~#description-label {
+        top: -2.25em;
+        margin-left: 0em;
+    }
+
+    #text-area-div {
+        margin-top: 18px;
+    }
+
+    #cancel-button {
+        margin-left: 7.75%;
+    }
+
+    #submit-button-div {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    #submit-button {
+        margin-right: 13%;
+    }
+}
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+//     $break-md      //          768 - 991          //      $break-lg - 1        //
+////////////////////////////////////////////////////////////////////////////////////
+
+@media screen and (min-width: $break-md) and (max-width: $break-lg - 1) {
+
+    #submit-button-div > * {
+        margin-left: 1.75%;
+    }
+
+    #text-area {
+        margin-top: 20px;
+    }
+
+    #price-input-div {
+        margin-top: 16px;
+    }
+    
+    #text-area {
+        width: 90%;
+    }
+
+    #title {
+        margin-left: 8px;
+    }
+
+    #p-scrollPanel-div {
+        display: none;
+    }
+
+    #p-scrollPanel-div-low {
+        display: inline;
+        margin-left: 2.75%;
+    }
+
+    #p-scrollPanel-div-very-low {
+        display: none;
+    }
+
+    #cancel-button {
+        margin-left: 8.5%;
+    }
+
+    #submit-button {
+        left: 2%;
+    }
+
+    .ui-state-default ~#description-label {
+        top: 0.85em;
+        margin-top: 12px;
+        margin-left: 0.15em;
+    }
+    
+    .ui-state-default:focus ~#description-label {
+        top: -0.8em;
+        margin-left: 0em;
+    }
+    
+    .ui-state-filled ~#description-label {
+        top: -0.8em;
+        margin-left: 0em;
+    }
+    
+    .ui-state-filled:focus ~#description-label {
+        top: -0.8em;
+        margin-left: 0em;
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////
+//               more than 992           //             $break-lg                 //
+////////////////////////////////////////////////////////////////////////////////////
+
+@media screen and (min-width: $break-lg) {
+
+    :host ::ng-deep p-scrollPanel {
+        width: 90%;
+        height: 220px;
+    }
+
+    #submit-button-div > * {
+        margin-left: 1.75%;
+    }
+
+    #text-area {
+        margin-top: 16px;
+    }
+
+    #text-area {
+        width: 95%;
+    }
+
+    #title {
+        margin-left: 8px;
+    }
+
+    #p-scrollPanel-div {
+        display: inline;
+    }
+
+    #p-scrollPanel-div-low {
+        display: none;
+    }
+
+    #p-scrollPanel-div-very-low {
+        display: none;
+    }
+
+    #cancel-button {
+        margin-left: 8.5%;
+    }
+
+    #submit-button {
+        left: 2%;
+    }
+
+    .ui-state-default ~#description-label {
+        top: 0.65em;
+        margin-top: 12px;
+        margin-left: 0.25em;
+    }
+    
+    .ui-state-default:focus ~#description-label {
+        top: -1em;
+        margin-left: 0em;
+    }
+    
+    .ui-state-filled ~#description-label {
+        top: -1em;
+        margin-left: 0em;
+    }
+    
+    .ui-state-filled:focus ~#description-label {
+        top: -1em;
+        margin-left: 0em;
+    }
+}

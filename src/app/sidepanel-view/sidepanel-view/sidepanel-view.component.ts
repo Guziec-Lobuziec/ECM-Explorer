@@ -4,7 +4,7 @@ import { MenuItem } from 'primeng/api';
 @Component({
   selector: 'app-sidepanel-view',
   templateUrl: './sidepanel-view.component.html',
-  styleUrls: ['./sidepanel-view.component.css']
+  styleUrls: ['./sidepanel-view.component.scss']
 })
 export class SidepanelViewComponent implements OnInit {
 
