@@ -4,8 +4,8 @@ import { IAgreementSearchService } from './iagreement-search-service';
 @Injectable({
   providedIn: 'root'
 })
-export class AgreementSearchServiceMockService implements IAgreementSearchService  {
+export class AgreementSearchServiceMockService /*implements IAgreementSearchService*/  {
 
-  
-  constructor() { }
+
+  //constructor() { }
 }
