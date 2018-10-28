@@ -1,15 +1,10 @@
 import { IQuery } from "./iquery";
+import { Option } from "fp-ts/lib/Option"
+import { NameFilter } from "./name-filter";
+
 
 export interface IAgreementSearchService {
-    question: string;
+    
+compileQuery(question: string, fallback: Option<IQuery>) : IQuery
 }
 
-function compileQuery(question: string, fallback: IQuery) : IQuery
-{
- return ;
-}
-
-function checkQuestion(question: string) : boolean
-{
-    return false;
-}
