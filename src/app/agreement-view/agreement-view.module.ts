@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { PanelModule } from 'primeng/panel';
 import { TableModule} from 'primeng/table';
 import { AgreementViewComponent } from 'src/app/agreement-view/agreement-view/agreement-view.component';
+import { AgreementViewRoutingModule } from './agreement-view-routing.module';
 
 @NgModule({
   imports: [
     CommonModule,
     PanelModule,
-    TableModule
+    TableModule,
+    AgreementViewRoutingModule
   ],
   exports: [
     AgreementViewComponent
