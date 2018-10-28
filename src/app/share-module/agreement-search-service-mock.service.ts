@@ -3,10 +3,10 @@ import { IAgreementSearchService } from './iagreement-search-service';
 import { IQuery } from '../share-module/iquery'
 import { NameFilter } from './/name-filter';
 import { Observable, from } from 'rxjs';
-import { skip, take } from 'rxjs/operators';
-import * as Rx from 'rxjs';
 import { AgreementDescription } from './model/agreement-description';
 import { agreementsList } from './mock/agreement-list';
+import { take, skip } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
@@ -14,9 +14,9 @@ import { agreementsList } from './mock/agreement-list';
 export class AgreementSearchServiceMockService implements IAgreementSearchService  {
   
 
-  searchPages(query: IQuery, pageNumber: number, pageSize: number): Observable<AgreementDescription[]>
+  searchPages(query: IQuery, pageNumber: number, pageSize: number): Observable<AgreementDescription | AgreementDescription[]>
   { 
-    return Rx.Observable.from(query.process(agreementsList)).skip(pageNumber*pageSize-1).take(pageSize).toArray()
+    return from(query.process(agreementsList)).pipe(skip(pageNumber*pageSize-1)).pipe(take(10))
   }
   
   
