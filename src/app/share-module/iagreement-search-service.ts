@@ -5,6 +5,7 @@ import { NameFilter } from "./name-filter";
 
 export interface IAgreementSearchService {
     
-compileQuery(question: string, fallback: Option<IQuery>) : IQuery
+compileQuery(question: string) : IQuery
+searchPages(query: IQuery, pageNumber:number, pageSize:number)
 }
 
