@@ -7,7 +7,7 @@ export class NameFilter implements IQuery
 {
     constructor(public query: string)
     {
-
+        
     }
     
     process(agreements: AgreementDescription[]): AgreementDescription[] {

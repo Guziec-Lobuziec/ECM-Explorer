@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { agreementsList } from 'src/app/share/mock/agreement-list';
+import { agreementsList } from '../../share-module/mock/agreement-list';
+
 
 
 @Component({

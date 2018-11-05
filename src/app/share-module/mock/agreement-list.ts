@@ -1,4 +1,5 @@
-import { AgreementDescription } from 'src/app/share/model/agreement-description';
+import { AgreementDescription } from "../model/agreement-description";
+
 
 export const agreementsList: AgreementDescription[] =
   [{
@@ -42,7 +43,7 @@ export const agreementsList: AgreementDescription[] =
           expirationTime: new Date(2018,10,20),
           status: 0,
           price: 8735,
-          name: "Kapcie4",
+          name: "Kapcie",
           description: "The supreme kapcie",
           listOfParticipant: [],
           listOfAction: [],
