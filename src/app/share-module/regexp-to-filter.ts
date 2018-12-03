@@ -8,16 +8,16 @@ export const regToFactory:[RegExp, IFilterFactory,  (m:string[]) => string][] = 
     new RegExp('name:((\s*[^:\s]*)*)(?!(\w*:))'),
     {
       create: (value:string, inner?:IQuery) => {
-        return new NameFilter(value, inner);
+        return new NameFilter(value.trim(), inner);
       }
     },
     (m:string[]) => m[1]
   ],
   [
-    new RegExp('price:((\s*[^:\d]*)*)(?!(\w*:))'),
+    new RegExp('price:((\s*[^:\D]*)*)(?!(\w*:))'),
     {
-      create: (value: number, inner?:IQuery) => {
-        return new PriceFilter(value,inner);
+      create: (value: string, inner?:IQuery) => {
+        return new PriceFilter(parseInt(value),inner);
       }
     },
     (m:string[]) => m[1]
