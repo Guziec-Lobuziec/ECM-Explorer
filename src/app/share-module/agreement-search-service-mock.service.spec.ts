@@ -26,13 +26,16 @@ describe('AgreementSearchServiceMockService', () => {
   describe('Standalone filters tests', () => {
     it('should filter array and output new with name only Kapcie' , () => {
       let filter: NameFilter = new NameFilter("Kapcie",null);
-       expect(filter.process(agreementsList)).toEqual(agreementsFilterNameList,"Should be only kapcie")
+       expect(filter.process(agreementsList)).toEqual(
+         agreementsList.filter(a => a.name === "Kapcie"),
+         "Should be only kapcie"
+       )
     });
 
-    it('filter array should be size of 1', () =>
+    it('filter array should be size of 2', () =>
     {
       let filter: NameFilter = new NameFilter("Kapcie",null);
-       expect(filter.process(agreementsList).length).toEqual(1,"Size should be 1")
+       expect(filter.process(agreementsList).length).toEqual(2,"Size should be 2")
     })
 
     it('should filter array and output new with price only 8735', () =>{
@@ -61,8 +64,21 @@ describe('AgreementSearchServiceMockService', () => {
     });
   })
 
-  it('test', inject( [AgreementSearchServiceMockService], ( service: AgreementSearchServiceMockService ) => {
-    service.searchPages(service.compileQuery("name: kapcie"),12,2).subscribe(result => expect(result).toBeGreaterThan(1))
-  }));
+  describe('Chained filters tests', () => {
+
+    it('simple search', inject( [AgreementSearchServiceMockService], ( service: AgreementSearchServiceMockService ) => {
+      service.searchPages(service.compileQuery("name: Kapcie"),12,2).subscribe(result => expect(result).toBeGreaterThan(1))
+    }));
+
+    it('Search item with given name and price', inject( [AgreementSearchServiceMockService], ( service: AgreementSearchServiceMockService ) => {
+      service
+      .searchPages(service.compileQuery("name: Kapcie price: 8735"),0,10)
+      .subscribe(result => expect(result).toContain(
+        agreementsList
+        .filter(a => a.name === "Kapcie")
+        .filter(a => a.price === 8735)
+      ))
+    }));
+  })
 
 });
