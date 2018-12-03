@@ -23,41 +23,43 @@ describe('AgreementSearchServiceMockService', () => {
     expect(service).toBeTruthy();
   }));
 
-  it('should filter array and output new with name only Kapcie' , () => {
-    let filter: NameFilter = new NameFilter("Kapcie");
-     expect(filter.process(agreementsList)).toEqual(agreementsFilterNameList,"Should be only kapcie")
-  });
+  describe('Standalone filters tests', () => {
+    it('should filter array and output new with name only Kapcie' , () => {
+      let filter: NameFilter = new NameFilter("Kapcie",null);
+       expect(filter.process(agreementsList)).toEqual(agreementsFilterNameList,"Should be only kapcie")
+    });
 
-  it('filter array should be size of 1', () =>
-  {
-    let filter: NameFilter = new NameFilter("Kapcie");
-     expect(filter.process(agreementsList).length).toEqual(1,"Size should be 1")
+    it('filter array should be size of 1', () =>
+    {
+      let filter: NameFilter = new NameFilter("Kapcie",null);
+       expect(filter.process(agreementsList).length).toEqual(1,"Size should be 1")
+    })
+
+    it('should filter array and output new with price only 8735', () =>{
+      let filter: PriceFilter = new PriceFilter(8735,null);
+      expect(filter.process(agreementsList)).toEqual(agreementsPriceList,"Should have agreement with price 8735")
+    } );
+
+    it('filter array should be size of 3', () =>
+    {
+      let filter: PriceFilter = new PriceFilter(8735,null);
+       expect(filter.process(agreementsList).length).toEqual(3,"Size should be 3")
+    });
+
+    it('should filter array and output new with date equal 2018-11-20', () =>
+    {
+      const date: Date = new Date(2018,11,20)
+      let filter: DateFilter = new DateFilter(date,null);
+      expect(filter.process(agreementsList)).toEqual(agreementsDateList,"Should have agreement with date 2018-11-20")
+    });
+
+    it('filter array should be size of 2', () =>
+    {
+      const date: Date = new Date(2018,11,20)
+      let filter: DateFilter = new DateFilter(date,null);
+       expect(filter.process(agreementsList).length).toEqual(2,"Size should be 2")
+    });
   })
-
-  it('should filter array and output new with price only 8735', () =>{
-    let filter: PriceFilter = new PriceFilter(8735);
-    expect(filter.process(agreementsList)).toEqual(agreementsPriceList,"Should have agreement with price 8735")
-  } );
-
-  it('filter array should be size of 3', () =>
-  {
-    let filter: PriceFilter = new PriceFilter(8735);
-     expect(filter.process(agreementsList).length).toEqual(3,"Size should be 3")
-  });
-
-  it('should filter array and output new with date equal 2018-11-20', () => 
-  {
-    const date: Date = new Date(2018,11,20)
-    let filter: DateFilter = new DateFilter(date);
-    expect(filter.process(agreementsList)).toEqual(agreementsDateList,"Should have agreement with date 2018-11-20")
-  });
-
-  it('filter array should be size of 2', () =>
-  {
-    const date: Date = new Date(2018,11,20)
-    let filter: DateFilter = new DateFilter(date);
-     expect(filter.process(agreementsList).length).toEqual(2,"Size should be 2")
-  });
 
   it('test', inject( [AgreementSearchServiceMockService], ( service: AgreementSearchServiceMockService ) => {
     service.searchPages(service.compileQuery("name: kapcie"),12,2).subscribe(result => expect(result).toBeGreaterThan(1))

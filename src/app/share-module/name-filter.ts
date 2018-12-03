@@ -1,21 +1,16 @@
-import { IQuery } from "../share-module/iquery"
 import { AgreementDescription } from "./model/agreement-description";
-import {Component, Input, OnInit} from "@angular/core";
-import { agreementsList } from "./mock/agreement-list";
+import { AbstractFilter } from "./abstract-filter";
+import { IQuery } from "./iquery";
 
-export class NameFilter implements IQuery
+export class NameFilter extends AbstractFilter
 {
-    constructor(public query: string)
-    {
-        
+    private query: string;
+    constructor(query: string, inner:IQuery){
+      super(inner)
+      this.query = query;
     }
-    
-    process(agreements: AgreementDescription[]): AgreementDescription[] {
-         return agreements.filter(agreement => agreement.name === this.query)
-    }
-    
 
-    ngOnInit(): void {
-        this.process(agreementsList);
+    filter(agreements: AgreementDescription[]): AgreementDescription[] {
+         return agreements.filter(agreement => agreement.name === this.query)
     }
 }

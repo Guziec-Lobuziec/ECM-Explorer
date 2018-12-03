@@ -1,5 +1,5 @@
 import { IQuery } from "./iquery";
 
 export interface IFilterFactory {
-    createFilter(value:string, inner:IQuery)
-    }
+    create(value:any, inner?:IQuery):IQuery
+}

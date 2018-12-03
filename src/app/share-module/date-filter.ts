@@ -1,13 +1,16 @@
-import { IQuery } from "./iquery";
 import { AgreementDescription } from "./model/agreement-description";
+import { AbstractFilter } from "./abstract-filter";
+import { IQuery } from "./iquery";
 
-export class DateFilter implements IQuery
+export class DateFilter extends AbstractFilter
 {
-    constructor(public query: any)
-    {
-
+    private query: Date;
+    constructor(query: Date, inner:IQuery){
+      super(inner)
+      this.query = query;
     }
-    process(agreements : AgreementDescription[]): AgreementDescription[] {
+
+    filter(agreements : AgreementDescription[]): AgreementDescription[] {
         return agreements.filter(agreement => agreement.expirationTime.getTime() === this.query.getTime()|| agreement.creationTime.getTime() === this.query.getTime())
     }
 
