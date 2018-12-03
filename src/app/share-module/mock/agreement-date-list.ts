@@ -1,31 +1,8 @@
 import { AgreementDescription } from "../model/agreement-description";
 
 
-export const agreementsList: AgreementDescription[] =
-  [{
-    creationTime: new Date(2018, 10, 13),
-    expirationTime: new Date(2018,11,21),
-    status: 0,
-    price: 8731,
-    name: "Contract for Halloween",
-    description: "The best supreme kapcie",
-    listOfParticipant: [],
-    listOfAction: [],
-    listOfPermittedActions: [],
-    listOfNotifications:[]
-    },
-    {
-      creationTime: new Date(2018, 10, 19),
-      expirationTime: new Date(2018,10,21),
-      status: 0,
-      price: 8735,
-      name: "Discount wizardry SHOP",
-      description: "The best supreme kapcie",
-      listOfParticipant: [],
-      listOfAction: [],
-      listOfPermittedActions: [],
-      listOfNotifications:[]
-      },
+export const agreementsDateList: AgreementDescription[] =
+  [
       {
         creationTime: new Date(2017, 10, 19),
         expirationTime: new Date(2018,11,20),

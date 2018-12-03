@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { IAgreementSearchService } from './iagreement-search-service';
 import { IQuery } from '../share-module/iquery'
-import { NameFilter } from './/name-filter';
 import { Observable, from } from 'rxjs';
 import { AgreementDescription } from './model/agreement-description';
 import { agreementsList } from './mock/agreement-list';
 import { take, skip } from 'rxjs/operators';
+import { FilterFactory } from './filter-factory';
 
 
 @Injectable({
@@ -26,8 +26,9 @@ export class AgreementSearchServiceMockService implements IAgreementSearchServic
   }
   
   compileQuery(question: string): IQuery {
-    return  new NameFilter(question)
+    return new FilterFactory().createFilter(question);
   }
+
 
   ngOnInit(): void {
     this.searchPages(this.compileQuery('name:Kapcie'),12,2)
