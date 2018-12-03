@@ -5,7 +5,7 @@ import { PriceFilter } from "./price-filter";
 
 export const regToFactory:[RegExp, IFilterFactory,  (m:string[]) => string][] = [
   [
-    new RegExp('name:((\s*[^:\s]*)*)(?!(\w*:))'),
+    /name:((\s*[^:\s]*)*)(?!(\w*:))/,
     {
       create: (value:string, inner?:IQuery) => {
         return new NameFilter(value.trim(), inner);
@@ -14,7 +14,7 @@ export const regToFactory:[RegExp, IFilterFactory,  (m:string[]) => string][] = 
     (m:string[]) => m[1]
   ],
   [
-    new RegExp('price:((\s*[^:\D]*)*)(?!(\w*:))'),
+    /price:((\s*[^:\D]*)*)(?!(\w*:))/,
     {
       create: (value: string, inner?:IQuery) => {
         return new PriceFilter(parseInt(value),inner);

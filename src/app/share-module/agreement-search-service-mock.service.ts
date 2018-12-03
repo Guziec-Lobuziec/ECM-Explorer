@@ -29,6 +29,7 @@ export class AgreementSearchServiceMockService implements IAgreementSearchServic
 
     return regToFactory
       .map( e => {return {entry: e, matched: question.match(e[0])}} )
+      .filter( e => (e.matched !== null))
       .map( r => {return { index: r.matched.index, value: r.entry[2](r.matched), factory: r.entry[1] }})
       .sort( (a,b) => b.index-a.index)
       .reduce<IQuery>( (finalQuery, current) => current.factory.create(current.value, finalQuery), null )

@@ -11,6 +11,6 @@ export class NameFilter extends AbstractFilter
     }
 
     filter(agreements: AgreementDescription[]): AgreementDescription[] {
-         return agreements.filter(agreement => agreement.name === this.query)
+         return agreements.filter(agreement => agreement.name.includes(this.query))
     }
 }

@@ -56,11 +56,11 @@ describe('AgreementSearchServiceMockService', () => {
       expect(filter.process(agreementsList)).toEqual(agreementsDateList,"Should have agreement with date 2018-11-20")
     });
 
-    it('filter array should be size of 2', () =>
+    it('filter array should be size of 3', () =>
     {
       const date: Date = new Date(2018,11,20)
       let filter: DateFilter = new DateFilter(date,null);
-       expect(filter.process(agreementsList).length).toEqual(2,"Size should be 2")
+       expect(filter.process(agreementsList).length).toEqual(3,"Size should be 3")
     });
   })
 
