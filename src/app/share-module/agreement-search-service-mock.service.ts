@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IAgreementSearchService } from './iagreement-search-service';
 import { IQuery } from '../share-module/iquery'
-import { Observable, from } from 'rxjs';
+import { Observable, from, of } from 'rxjs';
 import { AgreementDescription } from './model/agreement-description';
 import { agreementsList } from './mock/agreement-list';
 import { take, skip } from 'rxjs/operators';
@@ -14,9 +14,9 @@ import { regToFactory } from "./regexp-to-filter";
 })
 export class AgreementSearchServiceMockService implements IAgreementSearchService  {
 
-  searchPages(query: IQuery, pageNumber: number, pageSize: number): Observable<AgreementDescription | AgreementDescription[]>
+  searchPages(query: IQuery, pageNumber: number, pageSize: number): Observable<AgreementDescription[]>
   {
-    return from(query.process(agreementsList)).pipe(skip(pageNumber*pageSize-1)).pipe(take(10))
+    return of(query.process(agreementsList)).pipe(skip(pageNumber*pageSize-1)).pipe(take(10))
   }
 
 
@@ -32,7 +32,6 @@ export class AgreementSearchServiceMockService implements IAgreementSearchServic
       .map( r => {return { index: r.matched.index, value: r.entry[2](r.matched), factory: r.entry[1] }})
       .sort( (a,b) => b.index-a.index)
       .reduce<IQuery>( (finalQuery, current) => current.factory.create(current.value, finalQuery), null )
-
   }
 
 
