@@ -23,7 +23,7 @@ export const regToFactory:[RegExp, IFilterFactory,  (m:string[]) => string][] = 
     (m:string[]) => m[1]
   ],
   [
-    /expirationDate:((0[1-9]|[12][0-9]|3[01])[-/](0[1-9]|1[012])[- /.](19|20)\d\d)(?!(\w:))/,
+    /expirationDate:\s*((0[1-9]|[12][0-9]|3[01])[-/](0[1-9]|1[012])[- /.](19|20)\d\d)(?!(\w:))/,
     {
       create: (value: string, inner?:IQuery) => {
         return new PriceFilter(Date.parse(value),inner);
@@ -31,5 +31,5 @@ export const regToFactory:[RegExp, IFilterFactory,  (m:string[]) => string][] = 
     },
     (m:string[]) => m[1]
   ],
-  
+
 ];

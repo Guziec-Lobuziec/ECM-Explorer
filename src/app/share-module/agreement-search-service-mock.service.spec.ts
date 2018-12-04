@@ -94,7 +94,7 @@ describe('AgreementSearchServiceMockService', () => {
         agreementsList
         .filter(a => a.name === "Kapcie")
         .filter(a => a.price === 8735)
-        .filter(a => a.expirationTime === new Date(2018,11,20))
+        .filter(a => a.expirationTime.getTime() === new Date(2018,11,20).getTime())
         [0]
       ))
     }));
