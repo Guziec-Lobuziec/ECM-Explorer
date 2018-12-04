@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { agreementsList } from '../../share-module/mock/agreement-list';
+import { AgreementSearchServiceMockService } from 'src/app/share-module/agreement-search-service-mock.service';
+import { agreementsDateList } from 'src/app/share-module/mock/agreement-date-list';
+import { Observable } from 'rxjs';
+import { AgreementDescription } from 'src/app/share-module/model/agreement-description';
 
 
 
@@ -10,10 +14,14 @@ import { agreementsList } from '../../share-module/mock/agreement-list';
 })
 export class SearchViewComponent implements OnInit {
 
-  public searchText: String;
   public contracts = agreementsList;
 
-  constructor() { }
+  constructor(private searchService: AgreementSearchServiceMockService) { }
+
+  search(value: any) : Observable<AgreementDescription[]>
+  {
+    return this.searchService.searchPages(this.searchService.compileQuery('name:'+ value),12,2)
+  }
 
   ngOnInit() {
   }
