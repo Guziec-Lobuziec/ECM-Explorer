@@ -16,7 +16,7 @@ export class AgreementSearchServiceMockService implements IAgreementSearchServic
 
   searchPages(query: IQuery, pageNumber: number, pageSize: number): Observable<AgreementDescription[]>
   {
-    return of(query.process(agreementsList)).pipe(skip(pageNumber*pageSize-1)).pipe(take(10))
+    return of(query.process(agreementsList)).pipe(skip(pageNumber*pageSize-1)).pipe(take(pageSize))
   }
 
 
