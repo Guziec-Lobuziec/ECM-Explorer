@@ -11,7 +11,7 @@ export class PriceFilter extends AbstractFilter
     }
 
     filter(agreements: AgreementDescription[]): AgreementDescription[] {
-        return agreements.filter(agreement => agreement.price === this.query)
+        return agreements.filter(agreement => agreement.price.toString().includes(this.query.toString()))
     }
 
     processBeyond(agreements:AgreementDescription[]): AgreementDescription[]

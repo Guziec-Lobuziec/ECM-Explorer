@@ -72,11 +72,11 @@ describe('AgreementSearchServiceMockService', () => {
 
     it('Search item with given name and price', inject( [AgreementSearchServiceMockService], ( service: AgreementSearchServiceMockService ) => {
       service
-      .searchPages(service.compileQuery("name: Kapcie price: 8735"),0,10)
+      .searchPages(service.compileQuery("name: Kapcie price: 8731"),0,10)
       .subscribe(result => expect(result).toContain(
         agreementsList
         .filter(a => a.name === "Kapcie")
-        .filter(a => a.price === 8735)
+        .filter(a => a.price === 8731)
         [0]
       ))
     }));
@@ -89,7 +89,7 @@ describe('AgreementSearchServiceMockService', () => {
 
     it('Search item with given name, price and date', inject( [AgreementSearchServiceMockService], ( service: AgreementSearchServiceMockService ) => {
       service
-      .searchPages(service.compileQuery("name: Kapcie price: 8735 expirationTime: Date(Thu Dec 20 2018 00:00:00 GMT+0100 (Central European Standard Time))"),0,10)
+      .searchPages(service.compileQuery("name: Kapcie price: 8735 expirationDate: Date(Thu Dec 20 2018 00:00:00 GMT+0100 (Central European Standard Time))"),0,10)
       .subscribe(result => expect(result).toContain(
         agreementsList
         .filter(a => a.name === "Kapcie")

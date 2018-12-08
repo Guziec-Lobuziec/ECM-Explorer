@@ -26,7 +26,12 @@ export class SearchViewComponent implements OnInit {
   constructor(private searchService: AgreementSearchServiceMockService) { }
 
   ngOnInit() {
-
+    this.agreements = this.searchService.searchPages(
+      this.searchService.compileQuery("name:"),
+      this.pageNumber,
+      this.pageSize
+    )
+    
     this.searchValue
         .valueChanges
         .pipe(
@@ -44,7 +49,15 @@ export class SearchViewComponent implements OnInit {
               this.pageSize
             )
           }
+          else{
+            this.agreements = this.searchService.searchPages(
+              this.searchService.compileQuery("name:"),
+              this.pageNumber,
+              this.pageSize
+            )
 
+          }
+          
         });
   }
 

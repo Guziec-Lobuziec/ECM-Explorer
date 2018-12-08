@@ -17,7 +17,7 @@ export const regToFactory:[RegExp, IFilterFactory,  (m:string[]) => string][] = 
     /price:((\s*[^:\D]*)*)(?!(\w*:))/,
     {
       create: (value: string, inner?:IQuery) => {
-        return new PriceFilter(parseInt(value),inner);
+        return new PriceFilter(parseInt(value.trim()),inner);
       }
     },
     (m:string[]) => m[1]
