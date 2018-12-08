@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { agreementsList } from '../../share-module/mock/agreement-list';
 import { AgreementSearchServiceMockService } from 'src/app/share-module/agreement-search-service-mock.service';
 import { agreementsDateList } from 'src/app/share-module/mock/agreement-date-list';
-import { Observable } from 'rxjs';
+import { Observable, ObservableInput, of } from 'rxjs';
 import { AgreementDescription } from 'src/app/share-module/model/agreement-description';
+import { FormGroup, FormControl } from '@angular/forms';
 
 
 
@@ -14,8 +15,9 @@ import { AgreementDescription } from 'src/app/share-module/model/agreement-descr
 })
 export class SearchViewComponent implements OnInit {
 
-  public contracts = agreementsList;
-
+  agreements: Observable<AgreementDescription[]>
+  searchForm = new FormControl('');
+  
   constructor(private searchService: AgreementSearchServiceMockService) { }
 
   search(value: any) : Observable<AgreementDescription[]>
@@ -24,6 +26,8 @@ export class SearchViewComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    this.agreements = this.search(this.searchForm.get('searchValue'))
   }
 
 }

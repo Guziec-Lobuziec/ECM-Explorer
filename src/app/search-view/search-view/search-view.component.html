@@ -1,5 +1,7 @@
-<div class="search">
-    <input #fieldName (keyup) = "search(fieldName.value)" placeholder="search text goes here">
+<div class="search">    
+  
+        <input type="text" [formControl]="searchValue"> 
+
   <hr/>
       <table id="searchResults">
         <tr>
@@ -7,7 +9,7 @@
           <th>Name</th>
         </tr>
       </table>
-      <table id="searchResults" *ngFor="let c of contracts | filter: fieldName, let i = index;"> <!-- , description: searchText}; dla innych filtrow -->
+      <table id="searchResults" *ngFor="let c of agreements | async, let i = index;"> <!-- , description: searchText}; dla innych filtrow -->
         <tr>
           <td id="indexGG">{{i+1}}</td>
           <td>{{c.name}}</td>
