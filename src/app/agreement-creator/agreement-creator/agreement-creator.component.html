@@ -1,4 +1,13 @@
-<p>
-  agreement-creator works!
-</p>
-<p>Agreement Creator working!</p>
+<div class="agreement-creator ui-g">
+    <div class="ui-g-12">
+            <div class="card">
+                <p-steps [model]="items" [(activeIndex)]="activeIndex"></p-steps>
+            </div> 
+    </div>
+    <div class="ui-g-12">
+        <div class="card">
+            <a routerLink="a11"><button pButton type="button" label="Agreement 1.1"></button></a>
+            <a routerLink="a12"><button pButton type="button" label="Agreement 1.2"></button></a>
+        </div>
+    </div>
+</div>

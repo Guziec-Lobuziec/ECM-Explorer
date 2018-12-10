@@ -1,15 +1,14 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 
-
 @Component({
-  selector: 'app-agreement-creator',
-  templateUrl: './agreement-creator.component.html',
-  styleUrls: ['./agreement-creator.component.css'],
+  selector: 'app-agreement-one-two',
+  templateUrl: './agreement-one-two.component.html',
+  styleUrls: ['./agreement-one-two.component.css'],
 
   encapsulation: ViewEncapsulation.None
 })
-export class AgreementCreatorComponent implements OnInit {
+export class AgreementOneTwoComponent implements OnInit {
 
   items: MenuItem[];
   activeIndex: number;
@@ -22,7 +21,7 @@ export class AgreementCreatorComponent implements OnInit {
       { label: 'Create Agreement' },
       { label: 'Confirm Data'}
   ];
-    this.activeIndex = 0;
+    this.activeIndex = 1;
   }
 
 }
