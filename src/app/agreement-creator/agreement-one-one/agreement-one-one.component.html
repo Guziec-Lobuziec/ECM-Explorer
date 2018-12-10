@@ -1,0 +1,39 @@
+<div class="agreement-one-one ui-g">
+  <div class="ui-g-12">
+    <div class="card">
+      <p-steps [model]="items" [(activeIndex)]="activeIndex"></p-steps>
+    </div> 
+  </div>
+  <div class="ui-g-12 ui-lg-6">
+    <div class="card">
+        <label id="expirationTimeLabel" for="expirationTimeSelectButton">Expiration Time</label><br/>
+        <form [formGroup]="expirationTimeForm" (ngSubmit)="onSubmit()">
+          <p-selectButton id="expirationTimeSelectButton" formControlName="expirationTimeSelectButton" [options]="types"></p-selectButton>
+          <p-calendar id="expirationTime" formControlName="expirationTime" [inline]="true" [showTime]="true" [minDate]="minDate" [disabledDates]="invalidDates"></p-calendar>
+        </form>
+    </div>
+  </div>
+  <div class="ui-g-12 ui-lg-6">
+    <div class="card">
+      <div class="ui-g form-group">
+        <form [formGroup]="agreementForm" (ngSubmit)="onSubmit()">
+          <div class="ui-g-6">
+            <label id="nameLabel" for="nameInput">Name</label>
+            <input id="nameInput" type="text" formControlName="name" pInputText />
+          </div>
+          <div class="ui-g-6">
+            <label id="priceLabel" for="priceInput">Price</label>
+            <input id="priceInput" type="text" formControlName="price" pInputText />
+          </div>
+          <div class="ui-g-12">
+            <label id="descriptionLabel" for="descriptionTextArea">Description</label>
+            <textarea id="descriptionTextArea" formControlName="description" pInputTextarea></textarea>
+          </div>
+          <div class="ui-g-12">
+            <button id="submitButton" pButton type="submit" label="Submit"></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
