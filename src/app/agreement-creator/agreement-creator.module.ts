@@ -25,15 +25,15 @@ import { SelectButtonModule } from 'primeng/selectbutton';
     InputTextareaModule,
     CalendarModule,
     SelectButtonModule
-    
+
   ],
-  exports: [ 
-    AgreementCreatorComponent, 
+  exports: [
+    AgreementCreatorComponent,
     AgreementOneOneComponent,
     AgreementOneTwoComponent
   ],
-  declarations: [ 
-    AgreementCreatorComponent, 
+  declarations: [
+    AgreementCreatorComponent,
     AgreementOneOneComponent,
     AgreementOneTwoComponent
   ]

@@ -4,7 +4,6 @@ import { AppComponent } from './app.component';
 import { SidepanelViewModule } from './sidepanel-view/sidepanel-view.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from  '@angular/platform-browser/animations';
-import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
