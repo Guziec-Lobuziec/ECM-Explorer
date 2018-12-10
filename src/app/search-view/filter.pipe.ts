@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { AgreementDescription } from 'src/app/share/model/agreement-description';
 
 
 @Pipe({
