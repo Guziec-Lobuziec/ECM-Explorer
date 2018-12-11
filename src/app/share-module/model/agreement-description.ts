@@ -2,10 +2,12 @@ import { Status } from "./status";
 import { Participant } from "./participant";
 import { AgreementMethod } from "./agreement-method";
 import { AgreementNotification } from "./agreement-notification";
+import { EthAddress } from "../eth-address";
 
 export class AgreementDescription
 {
    constructor(
+       public address: EthAddress,
        public creationTime: Date,
        public expirationTime: Date,
        public status: Status,
@@ -18,9 +20,8 @@ export class AgreementDescription
        public listOfNotifications: Array<AgreementNotification>,
        )
    {
-       
+
    }
 
 
 }
-

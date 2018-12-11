@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap } from "@angular/router";
 import { AgreementDescription } from '../../share-module/model/agreement-description';
+import { IAgreementService } from "../../share-module/iagreement-service";
+import { EthAddress } from "../../share-module/eth-address";
+import { switchMap } from 'rxjs/operators';
 
 
 @Component({
@@ -11,9 +15,22 @@ export class AgreementViewComponent implements OnInit {
 
   agreementDescription: AgreementDescription;
 
-  constructor() { }
+  constructor(
+    private agreementService:IAgreementService,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+
+    this.route.paramMap.pipe(
+      switchMap((params: ParamMap) =>
+        this.agreementService
+          .fetchAgreement(new EthAddress(params.get('address')))
+      )
+    ).subscribe(agreement => {
+      this.agreementDescription = agreement
+    });
+
   }
 
 }

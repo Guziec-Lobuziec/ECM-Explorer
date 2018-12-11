@@ -1,8 +1,10 @@
 import { AgreementDescription } from "../model/agreement-description";
+import { EthAddress } from "../eth-address";
 
 export const agreementsPriceList: AgreementDescription[] =
 [
     {
+        address: EthAddress.parse('6204c634f06fa6a45e1f0e2a89c752f8450cdfad'),
         creationTime: new Date(2018, 10, 19),
         expirationTime: new Date(2018,10,21),
         status: 0,
@@ -15,6 +17,7 @@ export const agreementsPriceList: AgreementDescription[] =
         listOfNotifications:[]
         },
         {
+          address: EthAddress.parse('81cd2b96a2a7625fe76f5f8c5e3032843268cc82'),
           creationTime: new Date(2017, 10, 19),
           expirationTime: new Date(2018,11,20),
           status: 0,
@@ -27,6 +30,7 @@ export const agreementsPriceList: AgreementDescription[] =
           listOfNotifications:[]
           },
           {
+            address: EthAddress.parse('30c8d95fb80c874dc285284147d4b4a4faeb05a9'),
             creationTime: new Date(2018, 12, 19),
             expirationTime: new Date(2018,11,20),
             status: 0,

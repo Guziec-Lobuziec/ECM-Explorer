@@ -5,7 +5,7 @@ import {AgreementViewComponent} from "./agreement-view/agreement-view.component"
 
 const routes: Routes = [
 	{
-		path: "agreement",
+		path: ":address",
 		component: AgreementViewComponent
   }
 ];
