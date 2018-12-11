@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AgreementDescription } from '../../share-module/model/agreement-description';
+import { agreementsList } from 'src/app/share-module/mock/agreement-list';
 
 
 @Component({
@@ -9,57 +10,7 @@ import { AgreementDescription } from '../../share-module/model/agreement-descrip
 })
 export class UserOverviewComponent implements OnInit {
 
-  agreementsList: AgreementDescription[] =
-  [{
-    creationTime: new Date(2018, 10, 19),
-    expirationTime: new Date(2018,10,20),
-    status: 0,
-    price: 8735,
-    name: "Kapcie",
-    description: "The best supreme kapcie",
-    listOfParticipant: [],
-    listOfAction: [],
-    listOfPermittedActions: [],
-    listOfNotifications:[]
-    },
-    {
-      creationTime: new Date(2018, 10, 19),
-      expirationTime: new Date(2018,10,20),
-      status: 0,
-      price: 8735,
-      name: "Kapcie",
-      description: "The best supreme kapcie",
-      listOfParticipant: [],
-      listOfAction: [],
-      listOfPermittedActions: [],
-      listOfNotifications:[]
-      },
-      {
-        creationTime: new Date(2018, 10, 19),
-        expirationTime: new Date(2018,10,20),
-        status: 0,
-        price: 8735,
-        name: "Kapcie",
-        description: "The best supreme kapcie",
-        listOfParticipant: [],
-        listOfAction: [],
-        listOfPermittedActions: [],
-        listOfNotifications:[]
-        },
-        {
-          creationTime: new Date(2018, 10, 19),
-          expirationTime: new Date(2018,10,20),
-          status: 0,
-          price: 8735,
-          name: "Kapcie",
-          description: "The best supreme kapcie",
-          listOfParticipant: [],
-          listOfAction: [],
-          listOfPermittedActions: [],
-          listOfNotifications:[]
-          },
-
-  ]
+  agreementsList: AgreementDescription[] = agreementsList;
   constructor() { }
 
   ngOnInit() {
