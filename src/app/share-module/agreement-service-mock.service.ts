@@ -5,9 +5,7 @@ import { Observable, from, of  } from 'rxjs';
 import { AgreementDescription } from './model/agreement-description';
 import { agreementsList, agreementsAdresses } from './mock/agreement-list';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AgreementServiceMockService implements IAgreementService{
 
   constructor() { }

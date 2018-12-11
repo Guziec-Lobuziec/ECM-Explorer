@@ -1,9 +1,13 @@
+import { Injectable } from '@angular/core';
 import { EthAddress } from "./eth-address";
 import { Observable } from 'rxjs';
 import { AgreementDescription } from './model/agreement-description';
 
-export interface IAgreementService {
+@Injectable({
+  providedIn: 'root'
+})
+export abstract class IAgreementService {
 
-fetchAgreement(agreementAddr: EthAddress):Observable<AgreementDescription>
+abstract fetchAgreement(agreementAddr: EthAddress):Observable<AgreementDescription>
 
 }

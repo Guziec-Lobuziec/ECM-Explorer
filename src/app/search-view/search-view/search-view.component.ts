@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { agreementsList } from '../../share-module/mock/agreement-list';
-import { AgreementSearchServiceMockService } from 'src/app/share-module/agreement-search-service-mock.service';
+import { IAgreementSearchService } from 'src/app/share-module/iagreement-search-service';
 import { agreementsDateList } from 'src/app/share-module/mock/agreement-date-list';
 import { Observable, ObservableInput, of } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
@@ -13,7 +13,7 @@ import { IQuery } from 'src/app/share-module/iquery';
 @Component({
   selector: 'app-search-view',
   templateUrl: './search-view.component.html',
-  styleUrls: ['./search-view.component.css']
+  styleUrls: ['./search-view.component.css'],
 })
 export class SearchViewComponent implements OnInit {
 
@@ -23,7 +23,7 @@ export class SearchViewComponent implements OnInit {
   pageNumber: number = 0;
   pageSize: number = 10;
 
-  constructor(private searchService: AgreementSearchServiceMockService) { }
+  constructor(private searchService: IAgreementSearchService) { }
 
   ngOnInit() {
     this.agreements = this.searchService.searchPages(
@@ -31,7 +31,7 @@ export class SearchViewComponent implements OnInit {
       this.pageNumber,
       this.pageSize
     )
-    
+
     this.searchValue
         .valueChanges
         .pipe(
@@ -57,7 +57,7 @@ export class SearchViewComponent implements OnInit {
             )
 
           }
-          
+
         });
   }
 

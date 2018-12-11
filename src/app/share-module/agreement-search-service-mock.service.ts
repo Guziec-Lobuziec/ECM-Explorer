@@ -9,9 +9,7 @@ import { IFilterFactory } from "./ifilter-factory";
 import { regToFactory } from "./regexp-to-filter";
 
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AgreementSearchServiceMockService implements IAgreementSearchService  {
 
   searchPages(query: IQuery, pageNumber: number, pageSize: number): Observable<AgreementDescription[]>
@@ -19,11 +17,6 @@ export class AgreementSearchServiceMockService implements IAgreementSearchServic
     return of(query.process(agreementsList)).pipe(skip(pageNumber*pageSize-1)).pipe(take(pageSize))
   }
 
-
-  constructor()
-  {
-
-  }
 
   compileQuery(question: string): IQuery {
 
@@ -35,9 +28,4 @@ export class AgreementSearchServiceMockService implements IAgreementSearchServic
       .reduce<IQuery>( (finalQuery, current) => current.factory.create(current.value, finalQuery), null )
   }
 
-
-  ngOnInit(): void {
-    this.searchPages(this.compileQuery('name:Kapcie'),12,2)
-
-  }
 }
