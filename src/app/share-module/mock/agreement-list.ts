@@ -1,5 +1,7 @@
 import { AgreementDescription } from "../model/agreement-description";
 import { EthAddress } from "../eth-address";
+import { Participant } from "../model/participant";
+import { AgreementMethod } from "../model/agreement-method";
 
 
 export const agreementsList: AgreementDescription[] =
@@ -11,9 +13,10 @@ export const agreementsList: AgreementDescription[] =
     price: 8731,
     name: "Contract for Halloween",
     description: "The best supreme kapcie",
-    listOfParticipant: [],
+    listOfParticipant: [new Participant(EthAddress.parse('18cfd9f62E6A622CB7Bbe573fFe57777F552FB5c'),"Creator"),
+    new Participant(EthAddress.parse('051Cd8B81455404e9999C8846a11A809d6f52dB9'),"Participant")],
     listOfAction: [],
-    listOfPermittedActions: [],
+    listOfPermittedActions: [new AgreementMethod('Accept'), new AgreementMethod('Remove'), new AgreementMethod('Conclude')],
     listOfNotifications:[]
     },
     {
@@ -24,9 +27,10 @@ export const agreementsList: AgreementDescription[] =
       price: 8735,
       name: "Discount wizardry SHOP",
       description: "The best supreme kapcie",
-      listOfParticipant: [],
+      listOfParticipant: [new Participant(EthAddress.parse('18cfd9f62E6A622CB7Bbe573fFe57777F552FB5c'),"Creator"),
+      new Participant(EthAddress.parse('051Cd8B81455404e9999C8846a11A809d6f52dB9'),"Participant")],
       listOfAction: [],
-      listOfPermittedActions: [],
+      listOfPermittedActions: [new AgreementMethod('Accept'), new AgreementMethod('Remove'), new AgreementMethod('Conclude')],
       listOfNotifications:[]
       },
       {
@@ -37,9 +41,10 @@ export const agreementsList: AgreementDescription[] =
         price: 8735,
         name: "New peanut contract shop",
         description: "The best supreme kapcie",
-        listOfParticipant: [],
+        listOfParticipant: [new Participant(EthAddress.parse('18cfd9f62E6A622CB7Bbe573fFe57777F552FB5c'),"Creator"),
+      new Participant(EthAddress.parse('051Cd8B81455404e9999C8846a11A809d6f52dB9'),"Participant")],
         listOfAction: [],
-        listOfPermittedActions: [],
+        listOfPermittedActions: [new AgreementMethod('Accept'), new AgreementMethod('Remove'), new AgreementMethod('Conclude')],
         listOfNotifications:[]
         },
         {
@@ -50,9 +55,10 @@ export const agreementsList: AgreementDescription[] =
           price: 8735,
           name: "Kapcie",
           description: "The supreme kapcie",
-          listOfParticipant: [],
+          listOfParticipant: [new Participant(EthAddress.parse('18cfd9f62E6A622CB7Bbe573fFe57777F552FB5c'),"Creator"),
+    new Participant(EthAddress.parse('051Cd8B81455404e9999C8846a11A809d6f52dB9'),"Participant")],
           listOfAction: [],
-          listOfPermittedActions: [],
+          listOfPermittedActions: [new AgreementMethod('Accept'), new AgreementMethod('Remove'), new AgreementMethod('Conclude')],
           listOfNotifications:[]
           },
           {
@@ -63,9 +69,10 @@ export const agreementsList: AgreementDescription[] =
             price: 8731,
             name: "Kapcie",
             description: "The supreme kapcie",
-            listOfParticipant: [],
+            listOfParticipant: [new Participant(EthAddress.parse('18cfd9f62E6A622CB7Bbe573fFe57777F552FB5c'),"Creator"),
+    new Participant(EthAddress.parse('051Cd8B81455404e9999C8846a11A809d6f52dB9'),"Participant")],
             listOfAction: [],
-            listOfPermittedActions: [],
+            listOfPermittedActions: [new AgreementMethod('Accept'), new AgreementMethod('Remove'), new AgreementMethod('Conclude')],
             listOfNotifications:[]
             },
 
