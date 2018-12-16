@@ -32,7 +32,7 @@
         </div>
         <div class="buttons"  *ngFor="let agreement of agreementDescription.listOfPermittedActions">
 
-            <button pButton type="button" label="agreement.canonicName" [disabled]="false" (click)="handleClick($event)" ></button>
+            <button pButton type="button" label="{{agreement.canonicName}}" [disabled]="false" (click)="handleClick($event)" ></button>
         </div>
     </div>
 
