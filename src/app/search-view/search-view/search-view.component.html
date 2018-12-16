@@ -1,20 +1,31 @@
 <div class="search">    
-  
-        <input type="text" [formControl]="searchValue"> 
-
-  <hr/>
-      <table id="searchResults">
-        <tr>
-          <th id="indexGGth">#</th>
-          <th>Name</th>
-        </tr>
-      </table>
-      <table id="searchResults" *ngFor="let c of agreements | async, let i = index;"> <!-- , description: searchText}; dla innych filtrow -->
-        <tr>
-          <td id="indexGG">{{i+1}}</td>
-          <td>{{c.name}}</td>
-          <td>{{c.price}}</td>
-          <td>{{c.expirationTime}}</td>
-        </tr>
-      </table>
+   
+      <p-dataView #dv [value]="agreements|async" filterBy="name">
+          <p-header>
+              <input type="search" pInputText  (keyup)="dv.filter($event.target.value)">
+          </p-header>
+          <ng-template let-agreement pTemplate="listItem">
+              <div class="ui-g" style="padding: 2em;border-bottom: 1px solid #d9d9d9">        
+                  <div class="ui-g-12 ui-md-8 car-details">
+                      <div class="ui-g">
+                          <div class="ui-g-2 ui-sm-6">Name: </div>
+                          <div class="ui-g-10 ui-sm-6"><b>{{agreement.name}}</b></div>
+      
+                          <div class="ui-g-2 ui-sm-6">Price: </div>
+                          <div class="ui-g-10 ui-sm-6"><b>{{agreement.price}}</b></div>
+      
+                          <div class="ui-g-2 ui-sm-6">ExpirationTime: </div>
+                          <div class="ui-g-10 ui-sm-6"><b>{{agreement.expirationTime}}</b></div>
+                           
+                      </div>
+                  </div>
+                  <div class="ui-g-12 ui-md-1">
+                      <button type="button" pButton icon="pi pi-search" [routerLink]="['/agreement/'+agreement.address]"></button>
+                  </div>
+              </div>
+          </ng-template>
+    </p-dataView>
+    
+    
 </div>
+
