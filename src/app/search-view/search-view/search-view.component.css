@@ -1,5 +1,16 @@
 .search
 {
+    
+    margin-left: 200px;
+    z-index: 1;
+    background-color: white;
+    top: 8px;
+    left: 4px;
+    
+}
+
+/* .search
+{
     width: 300px;
     position: fixed;
     margin-left: 200px;
@@ -42,4 +53,4 @@
     text-align: left;
     background-color: #a0a2a5;
     color: white;
-}
+} */
