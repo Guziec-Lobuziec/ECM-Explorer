@@ -3,7 +3,9 @@ import { ActivatedRoute, ParamMap } from "@angular/router";
 import { AgreementDescription } from '../../share-module/model/agreement-description';
 import { IAgreementService } from "../../share-module/iagreement-service";
 import { EthAddress } from "../../share-module/eth-address";
-import { switchMap } from 'rxjs/operators';
+import { switchMap, map } from 'rxjs/operators';
+import { Participant } from 'src/app/share-module/model/participant';
+import { pipe } from 'fp-ts/lib/function';
 
 
 @Component({
@@ -20,6 +22,9 @@ export class AgreementViewComponent implements OnInit {
     private route: ActivatedRoute
   ) { }
 
+  
+
+  
   ngOnInit(): void {
 
     this.route.paramMap.pipe(

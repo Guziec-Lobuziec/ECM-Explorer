@@ -1,7 +1,9 @@
+import { EthAddress } from "../eth-address";
+
 export class Participant {
     
     constructor(
-        public address:string,
+        public address: EthAddress,
         public role: string)
     {
 

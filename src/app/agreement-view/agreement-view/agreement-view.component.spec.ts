@@ -22,4 +22,6 @@ describe('AgreementViewComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  
 });
