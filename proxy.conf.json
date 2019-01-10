@@ -1,0 +1,10 @@
+{
+  "/api/eth-client": {
+    "target": "http://localhost:8545",
+    "secure": false,
+    "pathRewrite": {
+      "^/api/eth-client": ""
+    },
+   "changeOrigin": true
+ }
+}

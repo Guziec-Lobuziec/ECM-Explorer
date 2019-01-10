@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  ethClient: 'http://localhost:8545'
 };

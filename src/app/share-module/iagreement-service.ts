@@ -3,7 +3,7 @@ import { EthAddress } from "./eth-address";
 import { Observable } from 'rxjs';
 import { AgreementDescription } from './model/agreement-description';
 
-import { AgreementServiceMockService } from "./agreement-service-mock.service";
+import { AgreementServiceMockService } from "./mock/agreement-service-mock.service";
 import { environment } from 'src/environments/environment';
 
 @Injectable({

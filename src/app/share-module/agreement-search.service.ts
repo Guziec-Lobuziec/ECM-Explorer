@@ -1,25 +1,25 @@
 import { Injectable } from '@angular/core';
-import { IAgreementSearchService } from './iagreement-search-service';
-import { IQuery } from '../share-module/iquery'
+import { IQuery } from "./iquery";
+import { Option } from "fp-ts/lib/Option"
+import { NameFilter } from "./name-filter";
 import { Observable, from, of } from 'rxjs';
 import { AgreementDescription } from './model/agreement-description';
-import { agreementsList } from './mock/agreement-list';
 import { take, skip } from 'rxjs/operators';
 import { IFilterFactory } from "./ifilter-factory";
 import { regToFactory } from "./regexp-to-filter";
+import { IAgreementSearchService } from './iagreement-search-service';
 
 
 @Injectable()
-export class AgreementSearchServiceMockService implements IAgreementSearchService  {
+export class AgreementSearchService implements IAgreementSearchService {
 
-  searchPages(query: IQuery, pageNumber: number, pageSize: number): Observable<AgreementDescription[]>
-  {
-    return of(query.process(agreementsList)).pipe(skip(pageNumber*pageSize-1)).pipe(take(pageSize))
+  constructor() { }
+
+  searchPages(query: IQuery, pageNumber:number, pageSize:number): Observable<AgreementDescription[]> {
+    return;
   }
 
-
-  compileQuery(question: string): IQuery {
-
+  compileQuery(question: string) : IQuery {
     return regToFactory
       .map( e => {return {entry: e, matched: question.match(e[0])}} )
       .filter( e => (e.matched !== null))

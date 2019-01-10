@@ -1,16 +1,16 @@
 import { TestBed, inject } from '@angular/core/testing';
 
 import { AgreementSearchServiceMockService } from './agreement-search-service-mock.service';
-import { agreementsList } from './mock/agreement-list';
-import { AgreementDescription } from './model/agreement-description';
-import { agreementsFilterNameList } from './mock/agreement-filter-name-list';
+import { agreementsList } from './agreement-list';
+import { AgreementDescription } from '../model/agreement-description';
+import { agreementsFilterNameList } from './agreement-filter-name-list';
 import { filter } from 'rxjs/operators';
 import { Observable } from 'rxjs/internal/Observable';
-import { NameFilter } from './name-filter';
-import { PriceFilter} from './price-filter';
-import { agreementsPriceList } from './mock/agreement-price-list';
-import { DateFilter } from './date-filter';
-import { agreementsDateList } from './mock/agreement-date-list';
+import { NameFilter } from '../name-filter';
+import { PriceFilter} from '../price-filter';
+import { agreementsPriceList } from './agreement-price-list';
+import { DateFilter } from '../date-filter';
+import { agreementsDateList } from './agreement-date-list';
 
 describe('AgreementSearchServiceMockService', () => {
   beforeEach(() => {

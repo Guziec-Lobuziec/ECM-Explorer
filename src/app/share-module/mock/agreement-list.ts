@@ -58,7 +58,7 @@ export const agreementsList: AgreementDescription[] =
           listOfParticipant: [new Participant(EthAddress.parse('18cfd9f62E6A622CB7Bbe573fFe57777F552FB5c'),"Creator"),
     new Participant(EthAddress.parse('051Cd8B81455404e9999C8846a11A809d6f52dB9'),"Participant")],
           listOfAction: [],
-          listOfPermittedActions: [new AgreementMethod('Accept'), new AgreementMethod('Remove'), new AgreementMethod('Conclude')],
+          listOfPermittedActions: [new AgreementMethod('Join')],
           listOfNotifications:[]
           },
           {

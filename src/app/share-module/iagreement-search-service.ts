@@ -5,7 +5,7 @@ import { NameFilter } from "./name-filter";
 import { Observable } from 'rxjs';
 import { AgreementDescription } from './model/agreement-description';
 
-import { AgreementSearchServiceMockService } from "./agreement-search-service-mock.service";
+import { AgreementSearchServiceMockService } from "./mock/agreement-search-service-mock.service";
 import { environment } from 'src/environments/environment';
 
 @Injectable({
