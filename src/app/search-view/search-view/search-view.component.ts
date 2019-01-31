@@ -51,7 +51,7 @@ export class SearchViewComponent implements OnInit {
           }
           else{
             this.agreements = this.searchService.searchPages(
-              this.searchService.compileQuery("name:"),
+              this.searchService.compileQuery("name: " + eventValue),
               this.pageNumber,
               this.pageSize
             )

@@ -1,0 +1,13 @@
+.header {
+    background: #333;
+    position: fixed;
+    height: 60px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+img {
+    width: auto;
+    height: 60px;
+  }
