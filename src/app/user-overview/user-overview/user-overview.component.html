@@ -1,4 +1,4 @@
-<p-panel header="User Home">
+<!--<p-panel header="User Home">
  <p>Address: '0xfB6916095ca1df60bB79Ce92cE3Ea74c37c5d359'</p>
  <p-carousel headerText="Participation in Agreements" [value]="agreementsList" class="ui-carousel">
         <ng-template let-agreement pTemplate="item">
@@ -55,4 +55,34 @@
  </p-carousel>
 
  <button pButton type="button" label="Unlock Wallet" class="ui-button-secondary"></button>
-</p-panel>
+</p-panel>-->
+
+<div class="user-overview ui-g">
+    <div class="ui-g-12">
+        <div class="card ui-g">
+            <div class="ui-g-12">
+                <h3>Participation in agreements</h3>
+            </div>
+            <div class="ui-g-12">
+                <h3>My Agreements</h3>
+            </div>
+            <div class="ui-g-12 ui-lg-6" *ngFor="let agreement of agreementsList">
+                <a [routerLink]="['/agreement/'+agreement.address]">
+                    <div class="card-gray ui-g">
+                        <div class="ui-g">
+                            <div class="ui-g-12">
+                                <h3>{{agreement.name}}</h3>
+                            </div>
+                            <div class="ui-g-12">
+                                <p><b>Price: </b>{{agreement.price}}</p>
+                            </div>
+                            <div class="ui-g-12">
+                                <p><b>Expiration Time: </b>{{agreement.expirationTime}}</p>
+                            </div>                  
+                        </div>
+                    </div>
+                </a>
+            </div> 
+        </div>
+    </div>
+</div>
