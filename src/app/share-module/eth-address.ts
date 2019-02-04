@@ -8,6 +8,10 @@ static parse(address:string): EthAddress {
     return new EthAddress(EthAddress.toChecksumAddress(address))
 }
 
+static zero(): EthAddress {
+  return EthAddress.parse('0x0000000000000000000000000000000000000000')
+}
+
 constructor(address:string) {
   if(address === EthAddress.toChecksumAddress(address.toLowerCase().replace('0x', ''))){
     this.address = address;
