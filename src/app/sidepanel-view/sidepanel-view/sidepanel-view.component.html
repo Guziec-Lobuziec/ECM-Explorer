@@ -1,4 +1,13 @@
-<div class="sidebar">
+<!--<div class="sidebar">
   <p-menu [model]="items"></p-menu>
+</div>-->
+<div class="sidebar">
+  <ul class="menu">
+    <li class="menu-item" *ngFor="let item of items">
+      <a [routerLink]="[item.routerLink]" [ngClass]="'active'">{{item.label}}</a>
+    </li>
+  </ul>
 </div>
-<router-outlet></router-outlet>
+<div class="routerOutlet">
+  <router-outlet></router-outlet>
+</div>

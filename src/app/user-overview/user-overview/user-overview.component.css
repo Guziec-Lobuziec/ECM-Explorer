@@ -4,11 +4,12 @@
     display: block;
 }
 
-:host >>> .ui-panel	
+/*:host >>> .ui-panel	
 {
     display:block;
     margin-left: 175px;
-}
+}*/
+
 :host >>> .ui-carousel-header
 {
     font-family: 'Enriqueta', arial, serif; 
@@ -27,4 +28,21 @@ p
 button
 {
    text-align: center;
+}
+
+.card-gray {
+    background-color: #808080;
+    border-radius: 6px;
+    padding: 24px;
+}
+
+a:hover {
+    color: black;
+}
+a:hover > .card {
+    background: #E6E6E6;
+}
+
+a {
+    color: black;
 }

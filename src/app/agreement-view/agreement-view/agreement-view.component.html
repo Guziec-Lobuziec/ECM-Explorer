@@ -1,4 +1,4 @@
-<div class="agreementView">
+<!--<div class="agreementView">
 <p-panel header="{{agreementDescription.name}}">
     <div class="ui-g">
         <div class="ui-g-4">
@@ -37,4 +37,42 @@
     </div>
 
 </p-panel>
+</div>-->
+
+<div class="agreementView ui-g">
+    <div class="ui-g-12">
+        <div class="card ui-g">
+            <div class="ui-g-4 ui-g">
+                <div class="ui-g-3">Creation time:</div> 
+                <div class="ui-g-9">{{agreementDescription.creationTime}}</div>
+                <div class="ui-g-3">Expiration time:</div> 
+                <div class="ui-g-9">{{agreementDescription.expirationTime}}</div>
+                <div class="ui-g-3">Status:</div> 
+                <div class="ui-g-9">{{agreementDescription.status}}</div>
+                <div class="ui-g-3">Price:</div> 
+                <div class="ui-g-9">{{ agreementDescription.price}}</div>
+                <div class="ui-g-3">Descritpion:</div> 
+                <div class="ui-g-9">{{agreementDescription.description}}</div>
+            </div>
+            <div class="ui-g-5 ui-g">
+                <div class="ui-g-12 ui-g">
+                    <div class="ui-g-4">Role</div>
+                    <div class="ui-g-8">Adress</div>
+                </div>
+                <div class="ui-g-12 ui-g" *ngFor="let participant of agreementDescription.listOfParticipant">
+                    <div class="ui-g-4">{{participant.role}}</div>
+                    <div class="ui-g-8">{{participant.address}}</div>
+                </div>
+            </div>
+            <div class="ui-g-3 ui-g">
+                <div class="ui-g-12">Notification</div>
+                <div class="ui-g-12">*something to notify*</div>
+            </div>
+            <div class="ui-g-12">
+                <div class="buttons" *ngFor="let agreement of agreementDescription.listOfPermittedActions">
+                    <button pButton type="button" label="{{agreement.canonicName}}" [disabled]="false" (click)="handleClick($event)" ></button> 
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
