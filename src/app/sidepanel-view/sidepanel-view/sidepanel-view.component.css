@@ -5,9 +5,8 @@
     position: fixed;
     z-index: 1;
     left: 0px;
-    top: 23%;
+    top: 24%;
     opacity: 0.9;
-    /*height: 100%;*/
     
 }
 
@@ -17,36 +16,44 @@
     border-radius: 0px 6px 6px 0px;
 }
 
+.a-menu-item {
+    display: block;
+    vertical-align: middle;
+}
+
 .menu-item {
-    border-bottom-style: solid;
-    border-bottom-color: #23292e;
-    border-bottom-width: 1px;
     border-left-style: solid;
     border-left-color: transparent;
     border-left-width: 4px;
     display: block;
-    padding-bottom: 12px;
-    padding-top: 12px;
+    padding: 12px;
+    padding-left: 24px;
+    text-decoration: none;
+    color: #d8d8d8;
+    /*padding-bottom: 12px;
+    padding-top: 12px;*/
+    border-bottom-style: solid;
+    border-bottom-color: #273d54;
+    border-bottom-width: 1px;
 }
 
-.menu-item:last-child {
+.menu-item:hover {
+    background-color: #366d92;
+}
+
+.a-menu-item:last-child(2) > .menu-item {
     border-bottom: 0px;
 }
 
-.menu-item > a {
-    padding-left: 24px;
-    padding-right: 24px;
-    text-decoration: none;
-    color: #d8d8d8;
+.active {
+    border-left-color: #007ad9;
+    background-color: #14334f;
 }
 
-/*.routerOutlet {
-    padding-top: 320px;
-    margin-left: 280px;
-    margin-right: 30px;
-}*/
+.active:hover {
+    background-color: #14334f;
+}
 
-:host >>> .ui-panelmenu
-{
+:host >>> .ui-panelmenu {
     height: 100vh;
 }
