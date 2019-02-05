@@ -8,7 +8,7 @@
 <div class="search-display ui-g">    
     <div class="ui-g-4 ui-g">
         <div class="ui-g-12" *ngFor="let agreement of agreements|async; let i = index">
-            <div *ngIf="i == 0 || (i-3) % 3 == 0" class="ui-g-12 ui-g space">
+            <div *ngIf="i == 0 || (i-3) % 3 == 0" class="ui-g space">
                 <a [routerLink]="['/agreement/'+agreement.address]">
                     <div class="ui-g-12 card ui-g">
                         <div class="ui-g-12 name-div">
