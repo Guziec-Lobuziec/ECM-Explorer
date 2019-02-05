@@ -1,22 +1,26 @@
+
 <div class="search ui-g">    
-    <div class="ui-g-12">
-        <div class="card">
-            <input type="search"  [formControl]="searchValue">
-        </div>
-    </div>
-    <div class="ui-g-12 ui-lg-6" *ngFor="let agreement of agreements|async">
+    <div class="ui-g-12 ui-lg-6 ui-xl-3 cards" *ngFor="let agreement of agreements|async">
         <a [routerLink]="['/agreement/'+agreement.address]">
-            <div class="card ui-g">
+            <div class="card ui-g card-border">
                 <div class="ui-g">
                     <div class="ui-g-12">
-                        <h3>{{agreement.name}}</h3>
+                        <p class="card-name-value">{{agreement.name}}</p>
                     </div>
                     <div class="ui-g-12">
-                        <p><b>Price: </b>{{agreement.price}}</p>
+                        <p class="card-creator-value">You</p>
                     </div>
                     <div class="ui-g-12">
-                        <p><b>Expiration Time: </b>{{agreement.expirationTime}}</p>
-                    </div>                  
+                        <p class="card-price">Price: </p>
+                        <p class="card-price-value">{{agreement.price}}</p>
+                    </div>
+                    <div class="ui-g-12">
+                        <p class="card-blocks-to-expire">Blocks:</p>
+                        <p class="card-blocks-to-expire-value">{{agreement.blockToExpire}}</p>
+                    </div>  
+                    <div class="ui-g-12">
+
+                    </div>                
                 </div>
             </div>
         </a>

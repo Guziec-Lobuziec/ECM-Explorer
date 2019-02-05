@@ -4,12 +4,18 @@
 @import '../node_modules/primeflex/primeflex.scss';
 
 body {
-    background-color: #f3f3f3;
+    /*background-color: #aa3334;*/
     font-family: "Open Sans","Helvetica Neue",sans-serif;
+    background-color: #20364d;
+    background-image: url("/src/assets/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .card {
-    background-color: #ffffff;
+    /*background-color: #ffffff;*/
+    background-color: #216a8d;
     border-radius: 6px;
+    opacity: 0.9;
     padding: 24px;
 }
