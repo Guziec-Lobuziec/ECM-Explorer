@@ -13,7 +13,7 @@ import { IQuery } from 'src/app/share-module/iquery';
 @Component({
   selector: 'app-search-view',
   templateUrl: './search-view.component.html',
-  styleUrls: ['./search-view.component.css'],
+  styleUrls: ['./search-view.component.scss'],
 })
 export class SearchViewComponent implements OnInit {
 
