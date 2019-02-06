@@ -96,29 +96,29 @@
         </div>
     </div>
     <div class="ui-g-6 ui-g my-agreements-container">
-            <div class="p-offset-1 ui-g-9 my-agreements-div">
-                <p>Participation in agreements</p>
-            </div>
-            <div class="p-offset-1 ui-g-9 ui-g">
-                <div class="ui-g-12" *ngFor="let agreement of agreementsList; let i = index">
-                    <div class="ui-g space">
-                        <a [routerLink]="['/agreement/'+agreement.address]">
-                            <div class="ui-g-12 card ui-g">
-                                <div class="ui-g-12 name-div">
-                                    <p class="card-name-value">{{agreement.name}}</p>
-                                </div>
-                                <div class="ui-g-12 price-div">
-                                    <p class="card-price">Price: </p>
-                                    <p class="card-price-value">{{agreement.price}}</p>
-                                </div>
-                                <div class="ui-g-12">
-                                    <p class="card-blocks-to-expire">Blocks:</p>
-                                    <p class="card-blocks-to-expire-value">{{agreement.blockToExpire}}</p>
-                                </div>                 
+        <div class="p-offset-1 ui-g-9 my-agreements-div">
+            <p>Participation in agreements</p>
+        </div>
+        <div class="p-offset-1 ui-g-9 ui-g">
+            <div class="ui-g-12" *ngFor="let agreement of agreementsList; let i = index">
+                <div class="ui-g space">
+                    <a [routerLink]="['/agreement/'+agreement.address]">
+                        <div class="ui-g-12 card ui-g">
+                            <div class="ui-g-12 name-div">
+                                <p class="card-name-value">{{agreement.name}}</p>
                             </div>
-                        </a>
-                    </div> 
-                </div>
+                            <div class="ui-g-12 price-div">
+                                <p class="card-price">Price: </p>
+                                <p class="card-price-value">{{agreement.price}}</p>
+                            </div>
+                            <div class="ui-g-12">
+                                <p class="card-blocks-to-expire">Blocks:</p>
+                                <p class="card-blocks-to-expire-value">{{agreement.blockToExpire}}</p>
+                            </div>                 
+                        </div>
+                    </a>
+                </div> 
             </div>
         </div>
+    </div>
 </div>
