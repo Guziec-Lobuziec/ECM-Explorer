@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MenuItem, SelectItem } from 'primeng/api';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { fromEventPattern } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-agreement-one-one',
@@ -15,15 +16,16 @@ export class AgreementOneOneComponent implements OnInit {
   agreementForm = new FormGroup({
     name: new FormControl(''),
     price: new FormControl(''),
+    blocks: new FormControl(''),
     description: new FormControl('')
   })
 
-  expirationTimeForm = new FormGroup({
+  /*expirationTimeForm = new FormGroup({
     expirationTimeSelectButton: new FormControl(""),
     expirationTime: new FormControl("")
   })
 
-  items: MenuItem[];
+  /*items: MenuItem[];
   activeIndex: number = 1;
 
   types: SelectItem[];
@@ -31,12 +33,12 @@ export class AgreementOneOneComponent implements OnInit {
 
 
   minDate: Date;
-  invalidDates: Array<Date>
+  invalidDates: Array<Date>*/
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private router: Router) {}
 
   ngOnInit() {
-    this.items = [
+    /*this.items = [
       { label: 'Choose Agreement Type' },
       { label: 'Create Agreement' },
       { label: 'Confirm Data'}
@@ -53,7 +55,7 @@ export class AgreementOneOneComponent implements OnInit {
     let today = new Date();
     this.minDate = new Date();
     this.minDate.setFullYear(today.getFullYear());
-    this.minDate.setMonth(today.getMonth());
+    this.minDate.setMonth(today.getMonth());*/
 
     /*for (let i = today.getDay(); i > 0; i--) {
       let invalidDate = new Date();
@@ -64,19 +66,21 @@ export class AgreementOneOneComponent implements OnInit {
     this.agreementForm = this.fb.group({
       "name": "",
       "price": "",
+      "blocks": "",
       "description": ""
     })
 
-    this.expirationTimeForm = this.fb.group({
+    /*this.expirationTimeForm = this.fb.group({
       "expirationTimeSelectButton": "Calendar",
       "expirationTime": ""
-    })
+    })*/
   }
 
   async onSubmit() {
     console.log("model-based form submitted");
-    console.log(this.expirationTimeForm);
+    //console.log(this.expirationTimeForm);
     console.log(this.agreementForm);
+    this.router.navigate(['/overview']);
   }
 
 }

@@ -41,7 +41,7 @@
 <div class="agreement-one-one ui-g">
   <div class="ui-g-12 name-container">
       <div class="name-div">
-          <p class="card-name">Create agreement A1.1</p>
+          <p class="card-name">Create agreement 1.1</p>
       </div>
   </div>
   <div class="ui-g-12 ui-g">
@@ -49,26 +49,29 @@
       <div class="ui-g-12">
         <div class="ui-g space">
           <div class="ui-g-12 card ui-g">
-            <div class="ui-g-6 ui-g first-container">
-              <div class="ui-g-12 status-div">
-                <label class="nameLabel" id="nameLabel" for="nameInput">Name:</label>
-                <input class="nameInput" id="nameInput" type="text" formControlName="name">
-              </div>
-              <div class="ui-g-12 price-div">
-                <label class="priceLabel" id="priceLabel" for="priceInput">Price:</label>
-                <input class="priceInput" id="priceInput" type="text" formControlName="price">
-              </div>
-              <div class="ui-g-12 blocks-div">
-                <label class="blocksLabel" id="blocksLabel" for="blocksInput">Blocks:</label>
-                <input class="blocksInput" id="blocksInput" type="text" formControlName="blocks">
+            <form [formGroup]="agreementForm" (ngSubmit)="onSubmit()">
+              <div class="ui-g-6 ui-g first-container">
+                <div class="ui-g-12 status-div">
+                  <label class="nameLabel" id="nameLabel" for="nameInput">Name:</label>
+                  <input class="nameInput" id="nameInput" type="text" formControlName="name">
+                </div>
+                <div class="ui-g-12 price-div">
+                  <label class="priceLabel" id="priceLabel" for="priceInput">Price:</label>
+                  <input class="priceInput" id="priceInput" type="text" formControlName="price">
+                </div>
+                <div class="ui-g-12 blocks-div">
+                  <label class="blocksLabel" id="blocksLabel" for="blocksInput">Blocks:</label>
+                  <input class="blocksInput" id="blocksInput" type="text" formControlName="blocks">
+                </div> 
               </div> 
-            </div> 
-            <div class="ui-g-6 ui-g second-container">
-              <label class="descriptionLabel" id="descriptionLabel" for="descriptionTextArea">Description:</label>
-              <textarea class="descriptionTextArea" id="descriptionTextArea" formControlName="description"></textarea>
-            </div>
-            <div class="ui-g-12 third-container">
-            </div>        
+              <div class="ui-g-6 ui-g second-container">
+                <label class="descriptionLabel" id="descriptionLabel" for="descriptionTextArea">Description:</label>
+                <textarea class="descriptionTextArea" id="descriptionTextArea" formControlName="description"></textarea>
+              </div>
+              <div class="ui-g-12 third-container">
+                <button class="w3-btn w3-blue" type="submit">Submit</button>
+              </div>
+            </form>        
           </div>
         </div> 
       </div>

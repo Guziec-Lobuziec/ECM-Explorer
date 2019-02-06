@@ -22,7 +22,7 @@ export class SidepanelViewComponent implements OnInit {
     this.items = [
       { label: 'Search', routerLink: '/search'},
       { label: 'Overview', routerLink: '/overview'},
-      { label: 'Creator', routerLink: '/creator'}
+      { label: 'Creator', routerLink: '/creator/a11'}
     ]
 
 
