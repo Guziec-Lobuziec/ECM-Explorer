@@ -10,6 +10,7 @@ export class AgreementDescription
        public address: EthAddress,
        public creationTime: Date,
        public expirationTime: Date,
+       public blockToExpire: number,
        public status: Status,
        public price: number,
        public name: string,

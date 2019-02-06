@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidepanel-view',
@@ -10,7 +11,7 @@ export class SidepanelViewComponent implements OnInit {
 
   items: Object;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     /*this.items = [
@@ -21,7 +22,7 @@ export class SidepanelViewComponent implements OnInit {
     this.items = [
       { label: 'Search', routerLink: '/search'},
       { label: 'Overview', routerLink: '/overview'},
-      { label: 'Creator', routerLink: '/creator'}
+      { label: 'Creator', routerLink: '/creator/a11'}
     ]
 
 

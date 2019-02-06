@@ -3,8 +3,17 @@
 </div>-->
 <div class="sidebar">
   <ul class="menu">
-    <li class="menu-item" *ngFor="let item of items">
-      <a [routerLink]="[item.routerLink]" [ngClass]="'active'">{{item.label}}</a>
+    <li *ngFor="let item of items">
+      <a *ngIf="router.url === item.routerLink" class="a-menu-item" [routerLink]="[item.routerLink]">
+        <div class="menu-item active">
+          {{item.label}}  
+        </div>
+      </a>   
+      <a *ngIf="router.url !== item.routerLink" class="a-menu-item" [routerLink]="[item.routerLink]">
+        <div class="menu-item">
+          {{item.label}}  
+        </div>
+      </a>
     </li>
   </ul>
 </div>

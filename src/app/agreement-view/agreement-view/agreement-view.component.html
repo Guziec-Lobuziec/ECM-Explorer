@@ -38,40 +38,84 @@
 
 </p-panel>
 </div>-->
+<!--<div class="name">
+    <div class="card-name">
+        <div class="name-div">        
+            <p class="card-name-value">{{agreementDescription.name}}</p>
+        </div>
+    </div>
+</div>-->
 
-<div class="agreementView ui-g">
-    <div class="ui-g-12">
-        <div class="card ui-g">
-            <div class="ui-g-4 ui-g">
-                <div class="ui-g-3">Creation time:</div> 
-                <div class="ui-g-9">{{agreementDescription.creationTime}}</div>
-                <div class="ui-g-3">Expiration time:</div> 
-                <div class="ui-g-9">{{agreementDescription.expirationTime}}</div>
-                <div class="ui-g-3">Status:</div> 
-                <div class="ui-g-9">{{agreementDescription.status}}</div>
-                <div class="ui-g-3">Price:</div> 
-                <div class="ui-g-9">{{ agreementDescription.price}}</div>
-                <div class="ui-g-3">Descritpion:</div> 
-                <div class="ui-g-9">{{agreementDescription.description}}</div>
-            </div>
-            <div class="ui-g-5 ui-g">
-                <div class="ui-g-12 ui-g">
-                    <div class="ui-g-4">Role</div>
-                    <div class="ui-g-8">Adress</div>
-                </div>
-                <div class="ui-g-12 ui-g" *ngFor="let participant of agreementDescription.listOfParticipant">
-                    <div class="ui-g-4">{{participant.role}}</div>
-                    <div class="ui-g-8">{{participant.address}}</div>
-                </div>
-            </div>
-            <div class="ui-g-3 ui-g">
-                <div class="ui-g-12">Notification</div>
-                <div class="ui-g-12">*something to notify*</div>
-            </div>
+<div class="agreement-view ui-g">
+    <div class="ui-g-12 ui-g">
+        <div class="ui-g-12 ui-g">
             <div class="ui-g-12">
-                <div class="buttons" *ngFor="let agreement of agreementDescription.listOfPermittedActions">
-                    <button pButton type="button" label="{{agreement.canonicName}}" [disabled]="false" (click)="handleClick($event)" ></button> 
-                </div>
+                <div class="ui-g space">
+                    <div class="ui-g-12 card ui-g">
+                        <div class="ui-g-12 name-container">
+                            <div class="name-div">
+                                <p class="card-name">{{agreementDescription.name}}</p>
+                            </div>
+                        </div>
+                        <div class="ui-g-3 ui-g first-container">
+                            <div class="ui-g-12 status-div">
+                                <p class="card-status">Status: </p>
+                                <p class="card-status-value">{{agreementDescription.status}}</p>
+                            </div>
+                            <div class="ui-g-12 price-div">
+                                <p class="card-price">Price: </p>
+                                <p class="card-price-value">{{agreementDescription.price}}</p>
+                            </div>
+                            <div class="ui-g-12 blocks-div">
+                                <p class="card-blocks-to-expire">Blocks:</p>
+                                <p class="card-blocks-to-expire-value">{{agreementDescription.expirationTime}}</p>
+                            </div> 
+                            <div class="ui-g-12 description-div">
+                                <p class="card-description">Descritpion:</p>
+                                <p class="card-description-value">{{agreementDescription.description}}</p>
+                            </div>  
+                        </div>
+                        <div class="ui-g-6 ui-g second-container">
+                            <div class="ui-g-8 address-label-div">
+                                <p class="card-address">Address:</p>
+                            </div>
+                            <div class="ui-g-4 role-label-div">
+                                <p class="card-role">Role:</p>
+                            </div>
+                            <div *ngFor="let participant of agreementDescription.listOfParticipant; let i = index">
+                                <div *ngIf="index % 2 === 0">
+                                    <div class="ui-g-8 address-div">
+                                        <p class="card-adress-value">{{participant.address}}</p>
+                                    </div>
+                                    <div class="ui-g-4 role-div">
+                                        <p class="card-role-value">{{participant.role}}</p>
+                                    </div>
+                                </div>
+                                <div *ngIf="index % 2 === 1">
+                                    <div class="ui-g-8 address-div">
+                                        <p class="card-adress-value">{{participant.address}}</p>
+                                    </div>
+                                    <div class="ui-g-4 role-div">
+                                        <p class="card-role-value">{{participant.role}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="ui-g-3 ui-g third-container">
+                            <div class="ui-g-12 notification-div">
+                                <p class="card-notification">Notification</p>
+                            </div>
+                            <div class="ui-g-12 notification-value-div">
+                                <p class="card-notification-value">*notification*</p>
+                            </div>
+                        </div> 
+                        <div class="ui-g-12 fourth-container">
+                            <div class="button" *ngFor="let agreement of agreementDescription.listOfPermittedActions">
+                                <button pButton type="button" label="{{agreement.canonicName}}" [disabled]="false" (click)="handleClick($event)" ></button>
+                            </div>
+                        </div>            
+                    </div>
+                </div> 
             </div>
         </div>
     </div>

@@ -1,25 +1,73 @@
-<div class="search ui-g">    
-    <div class="ui-g-12">
-        <div class="card">
-            <input type="search"  [formControl]="searchValue">
+
+<div class="search ui-g">
+    <div class="ui-g-12 ui-g">
+        <input class="search-input" type="search"  [formControl]="searchValue" placeholder="What are you looking for?">
+    </div>
+</div>
+
+<div class="search-display ui-g">    
+    <div class="ui-g-4 ui-g">
+        <div class="ui-g-12" *ngFor="let agreement of agreements|async; let i = index">
+            <div *ngIf="i == 0 || (i-3) % 3 == 0" class="ui-g space">
+                <a [routerLink]="['/agreement/'+agreement.address]">
+                    <div class="ui-g-12 card ui-g">
+                        <div class="ui-g-12 name-div">
+                            <p class="card-name-value">{{agreement.name}}</p>
+                        </div>
+                        <div class="ui-g-12 price-div">
+                            <p class="card-price">Price: </p>
+                            <p class="card-price-value">{{agreement.price}}</p>
+                        </div>
+                        <div class="ui-g-12">
+                            <p class="card-blocks-to-expire">Blocks:</p>
+                            <p class="card-blocks-to-expire-value">{{agreement.blockToExpire}}</p>
+                        </div>                 
+                    </div>
+                </a>
+            </div> 
         </div>
     </div>
-    <div class="ui-g-12 ui-lg-6" *ngFor="let agreement of agreements|async">
-        <a [routerLink]="['/agreement/'+agreement.address]">
-            <div class="card ui-g">
-                <div class="ui-g">
-                    <div class="ui-g-12">
-                        <h3>{{agreement.name}}</h3>
+    <div class="ui-g-4 ui-g">
+        <div class="ui-g-12 ui-g" *ngFor="let agreement of agreements|async; let i = index">
+            <div *ngIf="i == 1 || (i-3) % 3 == 1" class="ui-g-12 ui-g space">
+                <a [routerLink]="['/agreement/'+agreement.address]">
+                    <div class="ui-g-12 card ui-g">
+                        <div class="ui-g-12 name-div">
+                            <p class="card-name-value">{{agreement.name}}</p>
+                        </div>
+                        <div class="ui-g-12 price-div">
+                            <p class="card-price">Price: </p>
+                            <p class="card-price-value">{{agreement.price}}</p>
+                        </div>
+                        <div class="ui-g-12">
+                            <p class="card-blocks-to-expire">Blocks:</p>
+                            <p class="card-blocks-to-expire-value">{{agreement.blockToExpire}}</p>
+                        </div>                 
                     </div>
-                    <div class="ui-g-12">
-                        <p><b>Price: </b>{{agreement.price}}</p>
+                </a>
+            </div> 
+        </div>
+    </div>
+    <div class="ui-g-4 ui-g">
+        <div class="ui-g-12 ui-g" *ngFor="let agreement of agreements|async; let i = index">
+            <div *ngIf="i == 2 || (i-3) % 3 == 2" class="ui-g-12 ui-g space">
+                <a [routerLink]="['/agreement/'+agreement.address]">
+                    <div class="ui-g-12 card ui-g">
+                        <div class="ui-g-12 name-div">
+                            <p class="card-name-value">{{agreement.name}}</p>
+                        </div>
+                        <div class="ui-g-12 price-div">
+                            <p class="card-price">Price: </p>
+                            <p class="card-price-value">{{agreement.price}}</p>
+                        </div>
+                        <div class="ui-g-12">
+                            <p class="card-blocks-to-expire">Blocks:</p>
+                            <p class="card-blocks-to-expire-value">{{agreement.blockToExpire}}</p>
+                        </div>                 
                     </div>
-                    <div class="ui-g-12">
-                        <p><b>Expiration Time: </b>{{agreement.expirationTime}}</p>
-                    </div>                  
-                </div>
-            </div>
-        </a>
-    </div>  
+                </a>
+            </div> 
+        </div>
+    </div>
 </div>
 
