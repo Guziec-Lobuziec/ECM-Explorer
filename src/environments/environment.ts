@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  integration: false,
   ethClient: '/api/eth-client'
 };
 

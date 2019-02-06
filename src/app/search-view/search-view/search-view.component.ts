@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { agreementsList } from '../../share-module/mock/agreement-list';
 import { IAgreementSearchService } from 'src/app/share-module/iagreement-search-service';
 import { agreementsDateList } from 'src/app/share-module/mock/agreement-date-list';
 import { Observable, ObservableInput, of } from 'rxjs';

@@ -5,6 +5,8 @@ import { PanelModule } from 'primeng/panel';
 import { ButtonModule } from 'primeng/button';
 import { CarouselModule } from 'primeng/carousel';
 import { UserOverviewRoutingModule } from './user-overview-routing.module';
+import { ContractConfigComponent } from './contract-config/contract-config.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,9 +15,10 @@ import { UserOverviewRoutingModule } from './user-overview-routing.module';
     ButtonModule,
     PanelModule,
     CarouselModule,
+    ReactiveFormsModule,
     UserOverviewRoutingModule
   ],
-  exports: [UserOverviewComponent],
-  declarations: [UserOverviewComponent]
+  exports: [UserOverviewComponent, ContractConfigComponent],
+  declarations: [UserOverviewComponent, ContractConfigComponent]
 })
 export class UserOverviewModule { }

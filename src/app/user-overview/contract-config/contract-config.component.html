@@ -1,0 +1,9 @@
+<form [formGroup]="config" (ngSubmit)="onSubmit()">
+  <div>
+    <label id="addressLabel" for="addressInput">AgreementManager address:</label>
+    <input id="addressInput" type="text" formControlName="managerAddress" pInputText >
+  </div>
+  <div>
+    <button id="submitButton" pButton type="submit" label="Submit"></button>
+  </div>
+</form>
