@@ -22,4 +22,6 @@ export abstract class IAgreementSearchService {
 abstract searchPages(query: IQuery, pageNumber:number, pageSize:number): Observable<AgreementDescription[]>
 
 abstract compileQuery(question: string) : IQuery
+
+abstract addAgreement(agreement: AgreementDescription)
 }
