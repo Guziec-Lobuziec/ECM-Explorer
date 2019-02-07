@@ -3,6 +3,9 @@ import { MenuItem, SelectItem } from 'primeng/api';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { fromEventPattern } from 'rxjs';
 import { Router } from '@angular/router';
+import { IAgreementSearchService } from 'src/app/share-module/iagreement-search-service';
+import { AgreementDescription } from 'src/app/share-module/model/agreement-description';
+import { EthAddress } from 'src/app/share-module/eth-address';
 
 @Component({
   selector: 'app-agreement-one-one',
@@ -38,7 +41,7 @@ export class AgreementOneOneComponent implements OnInit {
   minDate: Date;
   invalidDates: Array<Date>*/
 
-  constructor(private fb: FormBuilder, private router: Router) {}
+  constructor(private fb: FormBuilder, private router: Router,private searchService: IAgreementSearchService) {}
 
   ngOnInit() {
     /*this.items = [
@@ -83,7 +86,22 @@ export class AgreementOneOneComponent implements OnInit {
     console.log("model-based form submitted");
     //console.log(this.expirationTimeForm);
     console.log(this.agreementForm);
+    let agreement: AgreementDescription = new AgreementDescription(
+      EthAddress.parse('0x32Be343B94f860124dC4fEe278FDCBD38C102D88'),
+      null,
+      null,
+      this.agreementForm.value.blocks,
+      null,
+      this.agreementForm.value.price,
+      this.agreementForm.value.name,
+      this.agreementForm.value.description,
+      [],
+      [],
+      [],
+      [],);
+    this.searchService.addAgreement(agreement);
     this.router.navigate(['/overview']);
   }
+  
 
 }

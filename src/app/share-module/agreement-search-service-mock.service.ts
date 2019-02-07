@@ -12,9 +12,10 @@ import { regToFactory } from "./regexp-to-filter";
 @Injectable()
 export class AgreementSearchServiceMockService implements IAgreementSearchService  {
 
+  agreements: AgreementDescription[] = agreementsList
   searchPages(query: IQuery, pageNumber: number, pageSize: number): Observable<AgreementDescription[]>
   {
-    return of(query.process(agreementsList)).pipe(skip(pageNumber*pageSize-1)).pipe(take(pageSize))
+    return of(query.process(this.agreements)).pipe(skip(pageNumber*pageSize-1)).pipe(take(pageSize))
   }
 
 
@@ -28,4 +29,8 @@ export class AgreementSearchServiceMockService implements IAgreementSearchServic
       .reduce<IQuery>( (finalQuery, current) => current.factory.create(current.value, finalQuery), null )
   }
 
+  addAgreement(agreement: AgreementDescription)
+  {
+      agreementsList.push(agreement);
+  }
 }
