@@ -5,7 +5,7 @@
     </div>
 </div>
 
-<div class="search-display ui-g">    
+<div *ngIf="large == true" class="search-display ui-g">    
     <div class="ui-g-4 ui-g">
         <div class="ui-g-12" *ngFor="let agreement of agreements|async; let i = index">
             <div *ngIf="i == 0 || (i-3) % 3 == 0" class="ui-g space">
@@ -51,6 +51,79 @@
     <div class="ui-g-4 ui-g">
         <div class="ui-g-12 ui-g" *ngFor="let agreement of agreements|async; let i = index">
             <div *ngIf="i == 2 || (i-3) % 3 == 2" class="ui-g-12 ui-g space">
+                <a [routerLink]="['/agreement/'+agreement.address]">
+                    <div class="ui-g-12 card ui-g">
+                        <div class="ui-g-12 name-div">
+                            <p class="card-name-value">{{agreement.name}}</p>
+                        </div>
+                        <div class="ui-g-12 price-div">
+                            <p class="card-price">Price: </p>
+                            <p class="card-price-value">{{agreement.price}}</p>
+                        </div>
+                        <div class="ui-g-12">
+                            <p class="card-blocks-to-expire">Blocks:</p>
+                            <p class="card-blocks-to-expire-value">{{agreement.blockToExpire}}</p>
+                        </div>                 
+                    </div>
+                </a>
+            </div> 
+        </div>
+    </div>
+</div>
+
+<!-- LG -->
+
+<div *ngIf="medium == true" class="search-display ui-g">    
+    <div class="ui-g-6 ui-g">
+        <div class="ui-g-12" *ngFor="let agreement of agreements|async; let i = index">
+            <div *ngIf="i % 2 == 0" class="ui-g space">
+                <a [routerLink]="['/agreement/'+agreement.address]">
+                    <div class="ui-g-12 card ui-g">
+                        <div class="ui-g-12 name-div">
+                            <p class="card-name-value">{{agreement.name}}</p>
+                        </div>
+                        <div class="ui-g-12 price-div">
+                            <p class="card-price">Price: </p>
+                            <p class="card-price-value">{{agreement.price}}</p>
+                        </div>
+                        <div class="ui-g-12">
+                            <p class="card-blocks-to-expire">Blocks:</p>
+                            <p class="card-blocks-to-expire-value">{{agreement.blockToExpire}}</p>
+                        </div>                 
+                    </div>
+                </a>
+            </div> 
+        </div>
+    </div>
+    <div class="ui-g-6 ui-g">
+        <div class="ui-g-12 ui-g" *ngFor="let agreement of agreements|async; let i = index">
+            <div *ngIf="i % 2 == 1" class="ui-g-12 ui-g space">
+                <a [routerLink]="['/agreement/'+agreement.address]">
+                    <div class="ui-g-12 card ui-g">
+                        <div class="ui-g-12 name-div">
+                            <p class="card-name-value">{{agreement.name}}</p>
+                        </div>
+                        <div class="ui-g-12 price-div">
+                            <p class="card-price">Price: </p>
+                            <p class="card-price-value">{{agreement.price}}</p>
+                        </div>
+                        <div class="ui-g-12">
+                            <p class="card-blocks-to-expire">Blocks:</p>
+                            <p class="card-blocks-to-expire-value">{{agreement.blockToExpire}}</p>
+                        </div>                 
+                    </div>
+                </a>
+            </div> 
+        </div>
+    </div>
+</div>
+
+<!-- XL -->
+
+<div *ngIf="small == true" class="search-display ui-g">    
+    <div class="ui-g-12 ui-g">
+        <div class="ui-g-12" *ngFor="let agreement of agreements|async; let i = index">
+            <div class="ui-g space">
                 <a [routerLink]="['/agreement/'+agreement.address]">
                     <div class="ui-g-12 card ui-g">
                         <div class="ui-g-12 name-div">

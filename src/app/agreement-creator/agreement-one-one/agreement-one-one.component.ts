@@ -11,6 +11,9 @@ import { EthAddress } from 'src/app/share-module/eth-address';
   selector: 'app-agreement-one-one',
   templateUrl: './agreement-one-one.component.html',
   styleUrls: ['./agreement-one-one.component.css'],
+  host: {
+    '(window:resize)': 'onResize($event)'
+  },
 
   encapsulation: ViewEncapsulation.None
 })

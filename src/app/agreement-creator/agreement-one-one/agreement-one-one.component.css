@@ -134,19 +134,19 @@ a:hover > .card {
     height: 40px;
     font-size: 18px;
     padding-left: 12px;
-    width: 75%;
+    width: calc(100% - 200px)
 }
 
 .nameInput {
-    margin-left: 28px;
+    margin-left: 62px;
 }
 
 .priceInput {
-    margin-left: 36px;
+    margin-left: 70px;
 }
 
 .blocksInput {
-    margin-left: 24px;
+    margin-left: 58px;
 }
 
 .price-div {
@@ -183,16 +183,8 @@ a:hover > .card {
     height: 180px;
     font-size: 18px;
     padding-left: 12px;
-    width: 75%;
+    width: calc(100% - 216px);
     margin-left: 24px;
-}
-
-.first-container {
-    flex: 1;
-}
-
-.second-container {
-    flex: 1;
 }
 
 

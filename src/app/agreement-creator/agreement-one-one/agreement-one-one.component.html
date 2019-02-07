@@ -49,8 +49,8 @@
       <div class="ui-g-12">
         <div class="ui-g space">
           <div class="ui-g-12 card ui-g">
-            <form [formGroup]="agreementForm" (ngSubmit)="onSubmit()">
-              <div class="ui-g-6 ui-g first-container">
+            <form class="ui-g-12" [formGroup]="agreementForm" (ngSubmit)="onSubmit()">
+              <div class="ui-g-12 ui-g first-container">
                 <div class="ui-g-12 status-div">
                   <label class="nameLabel" id="nameLabel" for="nameInput">Name:</label>
                   <input class="nameInput" id="nameInput" type="text" formControlName="name">
@@ -64,7 +64,7 @@
                   <input class="blocksInput" id="blocksInput" type="text" formControlName="blocks">
                 </div> 
               </div> 
-              <div class="ui-g-6 ui-g second-container">
+              <div class="ui-g-12 ui-g second-container">
                 <label class="descriptionLabel" id="descriptionLabel" for="descriptionTextArea">Description:</label>
                 <textarea class="descriptionTextArea" id="descriptionTextArea" formControlName="description"></textarea>
               </div>
