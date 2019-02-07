@@ -8,6 +8,9 @@ import { Router } from '@angular/router';
   selector: 'app-agreement-one-one',
   templateUrl: './agreement-one-one.component.html',
   styleUrls: ['./agreement-one-one.component.css'],
+  host: {
+    '(window:resize)': 'onResize($event)'
+  },
 
   encapsulation: ViewEncapsulation.None
 })

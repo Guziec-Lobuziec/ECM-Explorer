@@ -14,6 +14,9 @@ import { IQuery } from 'src/app/share-module/iquery';
   selector: 'app-search-view',
   templateUrl: './search-view.component.html',
   styleUrls: ['./search-view.component.scss'],
+  host: {
+    '(window:resize)': 'onResize($event)'
+  }
 })
 export class SearchViewComponent implements OnInit {
 
@@ -23,9 +26,61 @@ export class SearchViewComponent implements OnInit {
   pageNumber: number = 0;
   pageSize: number = 10;
 
+  small: boolean = false;
+  medium: boolean = false;
+  large: boolean = false;
+
+  onResize(event) {
+    if (event.target.innerWidth <= 1400) {
+      this.small = true;
+      this.medium = false;
+      this.large = false;
+
+      console.log("small");
+    }
+    else if (event.target.innerWidth < 1800 && event.target.innerWidth > 1400) { // 768px portrait
+      this.small = false;
+      this.medium = true;
+      this.large = false;
+
+      console.log("medium");
+    }
+
+    else if (event.target.innerWidth >= 1800) {
+      this.small = false;
+      this.medium = false;
+      this.large = true;
+
+      console.log("large");
+    }
+  }
+
   constructor(private searchService: IAgreementSearchService) { }
 
   ngOnInit() {
+    if (window.innerWidth <= 1400) {
+      this.small = true;
+      this.medium = false;
+      this.large = false;
+
+      console.log("small");
+    }
+    else if (window.innerWidth < 1800 && window.innerWidth > 1400) { // 768px portrait
+      this.small = false;
+      this.medium = true;
+      this.large = false;
+
+      console.log("medium");
+    }
+
+    else if (window.innerWidth >= 1800) {
+      this.small = false;
+      this.medium = false;
+      this.large = true;
+
+      console.log("large");
+    }
+
     this.agreements = this.searchService.searchPages(
       this.searchService.compileQuery("name:"),
       this.pageNumber,

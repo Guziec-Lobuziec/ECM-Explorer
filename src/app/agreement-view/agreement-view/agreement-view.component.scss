@@ -147,10 +147,6 @@ a:hover > .card {
         display: inline;
 }
 
-.description-div {
-        
-}
-
 .card-description {
         color: #d8d8d8;
         font-size: 18px;
@@ -205,31 +201,71 @@ a:hover > .card {
         margin-right: 12px;
 }
 
-.first-container {
-        padding-left: 12px;
-        padding-top: 24px;
-        margin-bottom: 32px;
-        border-right: solid 1px;
-        border-color: rgba(15, 23, 32, .2);
-        flex: 1;
+$break-medium: 1400px;
+$break-large: 1800px;
+
+//LARGE
+@media screen and (min-width: $break-large) {
+
+        .first-container {
+                padding-left: 12px;
+                padding-top: 24px;
+                margin-bottom: 32px;
+                border-right: solid 1px;
+                border-color: rgba(15, 23, 32, .2);
+                flex: 1;
+        }
+
+        .second-container {
+                padding-top: 24px;
+                padding-left: 24px;
+                border-right: solid 1px;
+                border-color: rgba(15, 23, 32, .2);
+                margin-bottom: 32px;
+                flex: 2;
+        }
+
+        .third-container {
+                padding-top: 24px;
+                margin-bottom: 32px;
+                padding-left: 24px;
+                flex: 1
+        }
+
+        .fourth-container {
+                padding-left: 12px;
+        }
 }
 
-.second-container {
-        padding-top: 24px;
-        padding-left: 24px;
-        border-right: solid 1px;
-        border-color: rgba(15, 23, 32, .2);
-        margin-bottom: 32px;
-        flex: 2;
-}
+//MEDIUM || SMALL
+@media screen and (max-width: $break-large - 1) {
 
-.third-container {
-        padding-top: 24px;
-        margin-bottom: 32px;
-        padding-left: 24px;
-        flex: 1
-}
+        .first-container {
+                padding-left: 12px;
+                padding-top: 24px;
+                padding-bottom: 24px;
+                border-right: solid 1px;
+                border-bottom: solid 1px;
+                border-color: rgba(15, 23, 32, .2);
+                flex: 2
+        }
 
-.fourth-container {
-        padding-left: 12px;
+        .second-container {
+                padding-top: 24px;
+                padding-left: 12px;
+                margin-bottom: 32px;
+        }
+
+        .third-container {
+                padding-top: 24px;
+                padding-bottom: 24px;
+                padding-left: 12px;
+                border-bottom: solid 1px;
+                border-color: rgba(15, 23, 32, .2);
+                flex: 1
+        }
+
+        .fourth-container {
+                padding-left: 12px;
+        }  
 }
